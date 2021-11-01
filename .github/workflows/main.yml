@@ -51,7 +51,7 @@ jobs:
       run: |
         source /home/runner/work/.venv/bin/activate
         git submodule update --remote
-        (cd pysph/docs; make html)
+        (cd pysph/docs/source; make html)
         sh ./locale/update.sh
         deactivate
     - name: commit
