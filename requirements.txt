@@ -1,10 +1,10 @@
+Cython>=0.20
 -e ./pysph
 Sphinx
 sphinx-intl[transifex]>=0.9.11
 sphinx_rtd_theme
 numpy
 setuptools>=42.0.0
-Cython>=0.20
 https://github.com/pypr/cyarray/zipball/master
 https://github.com/pypr/compyle/zipball/master
 mako
