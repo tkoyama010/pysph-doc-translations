@@ -40,7 +40,6 @@ jobs:
         python3 -m venv /home/runner/work/.venv
         source /home/runner/work/.venv/bin/activate
         pip install -U pip setuptools wheel
-        pip install -r ./pysph/requirements.txt
         pip install -r ./requirements.txt
         deactivate
     - name: update
