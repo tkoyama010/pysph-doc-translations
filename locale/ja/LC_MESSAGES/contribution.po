@@ -31,7 +31,7 @@ msgstr "ローカルにドキュメントを作成する方法"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:9
 msgid "To build the docs, clone the repository::"
-msgstr ""
+msgstr "ドキュメントを作成するには、リポジトリをクローンします。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:13
 msgid ""
