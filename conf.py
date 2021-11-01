@@ -15,13 +15,13 @@ import os
 
 from sphinx.util.pycompat import execfile_
 
-BASEDIR = os.path.dirname(os.path.abspath(__file__))
+basedir = os.path.dirname(os.path.abspath(__file__))
 
-execfile_(os.path.join(BASEDIR, "pysph/docs/source/conf.py"), globals())
+execfile_(os.path.join(basedir, "pysph/docs/source/conf.py"), globals())
 
-locale_dirs = [os.path.join(BASEDIR, "locale/")]
+locale_dirs = [os.path.join(basedir, "locale/")]
 
 
 def setup(app):
-    app.srcdir = os.path.join(BASEDIR, "pysph/docs/source/")
+    app.srcdir = os.path.join(basedir, "pysph/docs/source/")
     app.confdir = app.srcdir
