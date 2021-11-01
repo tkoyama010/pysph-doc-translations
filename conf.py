@@ -8,7 +8,7 @@ For example::
 This conf.py do:
 
 - Specify `locale_dirs` and `gettext_compact`.
-- Overrides source directory as 'CoFEA/docs/`.
+- Overrides source directory as 'pysph/docs/source`.
 
 """
 import os
