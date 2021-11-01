@@ -1,0 +1,2137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013-2018, PySPH developers
+# This file is distributed under the same license as the PySPH package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PySPH 1.0b1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-01 15:35+0000\n"
+"PO-Revision-Date: 2021-11-01 15:22+0000\n"
+"Language-Team: Japanese (https://www.transifex.com/getfem-doc/teams/127008/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../pysph/docs/source/design/equations.rst:5
+msgid "Writing equations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:7
+msgid ""
+"This document puts together all the essential information on how to write "
+"equations. We assume that you have already read the section "
+":ref:`design_overview`. Some information is repeated from there as well."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:11
+msgid ""
+"The PySPH equations are written in a very restricted way. The reason for "
+"this is that if you do follow the suggestions and the conventions below you "
+"will benefit from:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:15
+msgid "a high-performance serial implementation."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:16
+msgid "support for using your equations with OpenMP."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:17
+msgid "support for running on a GPU."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:19
+msgid ""
+"These are the main motivations for the severe restrictions we impose when "
+"you write your equations."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:23
+#: ../../pysph/docs/source/design/iom.rst:18
+msgid "Overview"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:25
+msgid ""
+"PySPH takes the equations you write and converts them on the fly to a high-"
+"performance implementation suitable for the particular backend you request."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:31
+msgid ""
+"It is important to understand the overall structure of how the equations are"
+" used when the high-performance code is generated. Let us look at the "
+"different methods of a typical :py:class:`Equation` subclass::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:72
+msgid ""
+"It is easier to understand this if we take a specific example. Let us say, "
+"we have a case where we have two particle arrays ``'fluid', 'solid'``. Let "
+"us say the equation is used as ``YourEquation(dest='fluid', "
+"sources=['fluid', 'solid'])``. Now given this context, let us see what "
+"happens when this equation is used.  What happens is as follows:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:78
+msgid ""
+"for each destination particle array (``'fluid'`` in this case), the "
+"``py_initialize`` method is called and is passed the destination particle "
+"array, ``t`` and ``dt`` (similar to ``reduce``). This function is a pure "
+"Python function so you can do what you want here, including importing any "
+"Python code and run anything you want. The code is NOT transpiled into "
+"C/OpenCL/CUDA."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:85
+msgid ""
+"for each fluid particle, the ``initialize`` method is called with the "
+"required arrays."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:88
+msgid ""
+"for each fluid particle, the ``initialize_pair`` method is called while "
+"having access to all the *fluid* arrays."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:91
+msgid ""
+"the *fluid* neighbors for each fluid particle are found for each particle "
+"and can be passed en-masse to the ``loop_all`` method. One can pass ``NBRS``"
+" which is an array of unsigned ints with indices to the neighbors in the "
+"source particles. ``N_NBRS`` is the number of neighbors (an integer). This "
+"method is ideal for any non-pairwise computations or more complex "
+"computations."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:98
+msgid ""
+"the *fluid* neighbors for each fluid particle are found and for each pair, "
+"the ``loop`` method is called with the required properties/values."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:101
+msgid ""
+"for each fluid particle, the ``initialize_pair`` method is called while "
+"having access to all the *solid* arrays."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:104
+msgid ""
+"the *solid* neighbors for each fluid particle are found and for each pair, "
+"the ``loop`` method is called with the required properties/values."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:107
+msgid ""
+"for each fluid particle, the ``post_loop`` method is called with the "
+"required properties."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:110
+msgid ""
+"If a reduce method exists, it is called for the destination (only once, not "
+"once per particle). It is passed the destination particle array and the time"
+" and timestep. It is transpiled when you are using Cython but is a pure "
+"Python function when you run this via OpenCL or CUDA."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:115
+msgid ""
+"The ``initialize, initialize_pair, loop_all, loop, post_loop`` methods all "
+"may be called in separate threads (both on CPU/GPU) depending on the "
+"implementation of the backend."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:119
+msgid ""
+"It is possible to set a scalar value in the equation as an instance "
+"attribute, i.e. by setting ``self.something = value`` but remember that this"
+" is just one value for the equation. This value must also be initialized in "
+"the ``__init__`` method. Also make sure that the attributes are public and "
+"not private (i.e. do not start with an underscore). There is only one "
+"equation instance used in the code, not one equation per thread or particle."
+" So if you wish to calculate a temporary quantity for each particle, you "
+"should create a separate property for it and use that instead of assuming "
+"that the initialize and loop functions run in serial. They do not run in "
+"serial when you use OpenMP or OpenCL. So do not create temporary arrays "
+"inside the equation for these sort of things. In general if you need a "
+"constant per destination array, add it as a constant to the particle array. "
+"Also note that you can add properties that have strides (see "
+":ref:`simple_tutorial` and look for \"stride\")."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:134
+msgid ""
+"Now, if the group containing the equation has ``iterate`` set to True, then "
+"the group will be iterated until convergence is attained for all the "
+"equations (or sub-groups) contained by it. The ``converged`` method is "
+"called once and not once per particle."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:139
+msgid ""
+"If you wish to compute something like a convergence condition, like the "
+"maximum error or the average error, you should do it in the reduce method."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:142
+msgid ""
+"The reduce function is called only once every time the accelerations are "
+"evaluated. As such you may write any Python code there. The only caveat is "
+"that when using the CPU, one will have to declare any variables used a "
+"little carefully -- ideally declare any variables used in this as "
+"``declare('object')``. On the GPU, this function is not called via OpenCL "
+"and is a pure Python function."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:150
+msgid "Understanding Groups a bit more"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:152
+msgid ""
+"Equations can be grouped together and it is important to understand how "
+"exactly this works. Let us take a simple example of a :py:class:`Group` with"
+" two equations. We illustrate two simple equations with pseudo-code::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:164
+msgid ""
+"Let us say that ``Eq2`` has a similar structure with respect to its methods."
+" Let us say we have a group defined as::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:174
+msgid ""
+"When this is expanded out and used inside PySPH, this is what happens in "
+"terms of pseudo-code::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:201
+msgid ""
+"That is, all the initialization is done for each equation in sequence, "
+"followed by the loops for each set of sources, fluid and solid in this case."
+" In the end, the ``post_loop`` is called for the destinations. The equations"
+" are therefore merged inside a group and entirely completed before the next "
+"group is taken up. Note that the order of the equations will be exactly as "
+"specified in the group."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:208
+msgid ""
+"When the ``real=False`` is used, then the non-local *destination* particles "
+"are also iterated over. ``real=True`` by default, which means that only "
+"destination particles whose ``tag`` property is local or equal to 0 are "
+"operated on. Otherwise, when ``real=False``, remote and ghost particles are "
+"also operated on. It is important to note that this does not affect the "
+"source particles. That is, **ALL** source particles influence the "
+"destinations whether the sources are local, remote or ghost particles. The "
+"``real`` keyword argument only affects the destination particles and not the"
+" sources."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:217
+msgid ""
+"Note that if you have different destinations in the same group, they are "
+"internally split up into different sets of loops for each destination and "
+"that these are done separately. I.e. one destination is fully processed and "
+"then the next is considered. So if we had for example, both ``fluid`` and "
+"``solid`` destinations, they would be processed separately. For example lets"
+" say you had this::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:233
+msgid "This would internally be equivalent to the following::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:250
+msgid ""
+"Note that basically the fluids are done first and then the solid particles "
+"are done. Obviously the first form is a lot more compact."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:253
+msgid ""
+"While it may appear that the PySPH equations and groups are fairly complex, "
+"they actually do a lot of work for you and allow you to express the "
+"interactions in a rather compact form."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:257
+msgid ""
+"When debugging it sometimes helps to look at the generated log file which "
+"will also print out the exact equations and groups that are being used."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:262
+msgid "Conventions followed"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:264
+msgid ""
+"There are a few important conventions that are to be followed when writing "
+"the equations. When passing arguments to the ``initialize, loop, post_loop``"
+" methods,"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:268
+#: ../../pysph/docs/source/design/overview.rst:510
+msgid "``d_*`` indicates a destination array."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:270
+#: ../../pysph/docs/source/design/overview.rst:512
+msgid "``s_*`` indicates a source array."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:272
+#: ../../pysph/docs/source/design/overview.rst:514
+msgid ""
+"``d_idx`` and ``s_idx`` represent the destination and source index "
+"respectively."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:275
+#: ../../pysph/docs/source/design/overview.rst:517
+msgid ""
+"Each function can take any number of arguments as required, these are "
+"automatically supplied internally when the application runs."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:278
+#: ../../pysph/docs/source/design/overview.rst:520
+msgid "All the standard math symbols from ``math.h`` are also available."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:280
+msgid ""
+"The following precomputed quantites are available and may be passed into any"
+" equation:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:283
+#: ../../pysph/docs/source/design/overview.rst:543
+msgid "``HIJ = 0.5*(d_h[d_idx] + s_h[s_idx])``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:285
+#: ../../pysph/docs/source/design/overview.rst:545
+msgid ""
+"``XIJ[0] = d_x[d_idx] - s_x[s_idx]``, ``XIJ[1] = d_y[d_idx] - s_y[s_idx]``, "
+"``XIJ[2] = d_z[d_idx] - s_z[s_idx]``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:289
+#: ../../pysph/docs/source/design/overview.rst:549
+msgid "``R2IJ = XIJ[0]*XIJ[0] + XIJ[1]*XIJ[1] + XIJ[2]*XIJ[2]``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:291
+#: ../../pysph/docs/source/design/overview.rst:551
+msgid "``RIJ = sqrt(R2IJ)``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:293
+#: ../../pysph/docs/source/design/overview.rst:553
+msgid "``WIJ = KERNEL(XIJ, RIJ, HIJ)``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:295
+#: ../../pysph/docs/source/design/overview.rst:555
+msgid "``WJ = KERNEL(XIJ, RIJ, s_h[s_idx])``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:297
+#: ../../pysph/docs/source/design/overview.rst:557
+msgid "``RHOIJ = 0.5*(d_rho[d_idx] + s_rho[s_idx])``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:299
+#: ../../pysph/docs/source/design/overview.rst:559
+msgid "``WI = KERNEL(XIJ, RIJ, d_h[d_idx])``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:301
+#: ../../pysph/docs/source/design/overview.rst:561
+msgid "``RHOIJ1 = 1.0/RHOIJ``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:303
+#: ../../pysph/docs/source/design/overview.rst:563
+msgid "``DWIJ``: ``GRADIENT(XIJ, RIJ, HIJ, DWIJ)``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:304
+#: ../../pysph/docs/source/design/overview.rst:564
+msgid "``DWJ``: ``GRADIENT(XIJ, RIJ, s_h[s_idx], DWJ)``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:305
+#: ../../pysph/docs/source/design/overview.rst:565
+msgid "``DWI``: ``GRADIENT(XIJ, RIJ, d_h[d_idx], DWI)``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:307
+#: ../../pysph/docs/source/design/overview.rst:567
+msgid ""
+"``VIJ[0] = d_u[d_idx] - s_u[s_idx]`` ``VIJ[1] = d_v[d_idx] - s_v[s_idx]`` "
+"``VIJ[2] = d_w[d_idx] - s_w[s_idx]``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:311
+#: ../../pysph/docs/source/design/overview.rst:571
+msgid "``EPS = 0.01 * HIJ * HIJ``"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:313
+msgid ""
+"``SPH_KERNEL``: the kernel being used and one can call the kernel as "
+"``SPH_KERNEL.kernel(xij, rij, h)`` the gradient as "
+"``SPH_KERNEL.gradient(...)``, ``SPH_KERNEL.gradient_h(...)`` etc. The kernel"
+" is any one of the instances of the kernel classes defined in "
+":py:mod:`pysph.base.kernels`"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:319
+#: ../../pysph/docs/source/design/overview.rst:574
+msgid ""
+"In addition if one requires the current time or the timestep in an equation,"
+" the following may be passed into any of the methods of an equation:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:322
+#: ../../pysph/docs/source/design/overview.rst:577
+msgid "``t``: is the current time."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:324
+#: ../../pysph/docs/source/design/overview.rst:579
+msgid "``dt``: the current time step."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:326
+msgid ""
+"For the ``loop_all`` method and the ``loop`` method, one may also pass the "
+"following:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:329
+msgid "``NBRS``: an array of unsigned ints with neighbor indices."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:330
+msgid ""
+"``N_NBRS``: an integer denoting the number of neighbors for the current "
+"destination particle with index, ``d_idx``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:336
+msgid ""
+"Note that all standard functions and constants in ``math.h`` are available "
+"for use in the equations. The value of :math:`\\pi` is available as "
+"``M_PI``. Please avoid using functions from ``numpy`` as these are Python "
+"functions and are slow. They also will not allow PySPH to be run with "
+"OpenMP. Similarly, do not use functions or constants from ``sympy`` and "
+"other libraries inside the equation methods as these will significantly slow"
+" down your code."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:344
+#: ../../pysph/docs/source/design/overview.rst:592
+msgid "In addition, these constants from the math library are available:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:346
+#: ../../pysph/docs/source/design/overview.rst:594
+msgid "``M_E``: value of e"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:347
+#: ../../pysph/docs/source/design/overview.rst:595
+msgid "``M_LOG2E``: value of log2e"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:348
+#: ../../pysph/docs/source/design/overview.rst:596
+msgid "``M_LOG10E``: value of log10e"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:349
+#: ../../pysph/docs/source/design/overview.rst:597
+msgid "``M_LN2``: value of loge2"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:350
+#: ../../pysph/docs/source/design/overview.rst:598
+msgid "``M_LN10``: value of loge10"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:351
+#: ../../pysph/docs/source/design/overview.rst:599
+msgid "``M_PI``: value of pi"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:352
+#: ../../pysph/docs/source/design/overview.rst:600
+msgid "``M_PI_2``: value of pi / 2"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:353
+#: ../../pysph/docs/source/design/overview.rst:601
+msgid "``M_PI_4``: value of pi / 4"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:354
+#: ../../pysph/docs/source/design/overview.rst:602
+msgid "``M_1_PI``: value of 1 / pi"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:355
+#: ../../pysph/docs/source/design/overview.rst:603
+msgid "``M_2_PI``: value of 2 / pi"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:356
+#: ../../pysph/docs/source/design/overview.rst:604
+msgid "``M_2_SQRTPI``: value of 2 / (square root of pi)"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:357
+#: ../../pysph/docs/source/design/overview.rst:605
+msgid "``M_SQRT2``: value of square root of 2"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:358
+#: ../../pysph/docs/source/design/overview.rst:606
+msgid "``M_SQRT1_2``: value of square root of 1/2"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:360
+#: ../../pysph/docs/source/design/overview.rst:608
+msgid ""
+"In an equation, any undeclared variables are automatically declared to be "
+"doubles in the high-performance Cython code that is generated.  In addition "
+"one may declare a temporary variable to be a ``matrix`` or a ``cPoint`` by "
+"writing:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:371
+#: ../../pysph/docs/source/design/overview.rst:618
+msgid "When the Cython code is generated, this gets translated to:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:379
+msgid ""
+"One can also declare any valid c-type using the same approach, for example "
+"if one desires a ``long`` data type, one may use ``i = declare(\"long\")``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:382
+msgid ""
+"Note that the additional (optional) argument in the declare specifies the "
+"number of variables. While this is ignored during transpilation, this is "
+"useful when writing functions in pure Python, the "
+":py:func:`compyle.api.declare` function provides a pure Python "
+"implementation of this so that the code works both when compiled as well as "
+"when run from pure Python. For example:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:393
+msgid ""
+"In this case, the declare function call returns two integers so that the "
+"code runs correctly in pure Python also. The second argument is optional and"
+" defaults to 1. If we defined a matrix, then this returns two NumPy arrays "
+"of the appropriate shape."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:403
+msgid ""
+"Thus the code one writes can be used in pure Python and can also be safely "
+"transpiled into other languages."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:407
+msgid "Writing the reduce method"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:409
+#: ../../pysph/docs/source/design/overview.rst:628
+msgid ""
+"One may also perform any reductions on properties.  Consider a trivial "
+"example of calculating the total mass and the maximum ``u`` velocity in the "
+"following equation:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:422
+#: ../../pysph/docs/source/design/overview.rst:641
+msgid "where:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:424
+#: ../../pysph/docs/source/design/overview.rst:643
+msgid "``dst``: refers to a destination ``ParticleArray``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:426
+#: ../../pysph/docs/source/design/overview.rst:645
+msgid "``t, dt``: are the current time and timestep respectively."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:428
+#: ../../pysph/docs/source/design/overview.rst:647
+msgid ""
+"``serial_reduce_array``: is a special function provided that performs "
+"reductions correctly in serial. It currently supports ``sum, prod, max`` and"
+" ``min`` operations.  See "
+":py:func:`pysph.base.reduce_array.serial_reduce_array`.  There is also a "
+":py:func:`pysph.base.reduce_array.parallel_reduce_array` which is to be used"
+" to reduce an array across processors.  Using ``parallel_reduce_array`` is "
+"expensive as it is an all-to-all communication.  One can reduce these by "
+"using a single array and use that to reduce the communication."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:438
+msgid ""
+"We recommend that for any kind of reductions one always use the "
+"``serial_reduce_array`` function and the ``parallel_reduce_array`` inside a "
+"``reduce`` method.  One should not worry about parallel/serial modes in this"
+" case as this is automatically taken care of by the code generator.  In "
+"serial, the parallel reduction does nothing."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:444
+#: ../../pysph/docs/source/design/overview.rst:663
+msgid ""
+"With this machinery, we are able to write complex equations to solve almost "
+"any SPH problem.  A user can easily define a new equation and instantiate "
+"the equation in the list of equations to be passed to the application.  It "
+"is often easiest to look at the many existing equations in PySPH and learn "
+"the general patterns."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:451
+msgid "Adaptive timesteps"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:453
+msgid ""
+"There are a couple of ways to use adaptive timesteps. The first is to "
+"compute a required timestep directly per-particle in a particle array "
+"property called ``dt_adapt``. The minimum value of this array across all "
+"particle arrays is used to set the timestep directly. This is the easiest "
+"way to set the adaptive timestep."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:459
+msgid ""
+"If the ``dt_adapt`` parameter is not set one may also use standard velocity,"
+" force, and viscosity based parameters. The integrator uses information from"
+" the arrays ``dt_cfl``, ``dt_force``, and ``dt_visc`` in each of the "
+"particle arrays to determine the most suitable time step. This is done using"
+" the following approach. The minimum smoothing parameter ``h`` is found as "
+"``hmin``. Let the CFL number be given as ``cfl``. For the velocity "
+"criterion, the maximum value of ``dt_cfl`` is found and then a suitable "
+"timestep is found as::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:470
+msgid "For the force based criterion we use the following::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:474
+msgid "for the viscosity we have::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:478
+msgid "Then the correct timestep is found as::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:482
+msgid ""
+"The ``cfl`` is set to 0.3 by default. One may pass ``--cfl`` to the "
+"application to change the CFL. Note that when the ``dt_adapt`` property is "
+"used the CFL has no effect as we assume that the user will compute a "
+"suitable value based on their requirements."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:487
+msgid ""
+"The :py:class:`pysph.sph.integrator.Integrator` class code may be "
+"instructive to look at if you are wondering about any particular details."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:491
+msgid "Illustration of the ``loop_all`` method"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:493
+msgid ""
+"The ``loop_all`` is a powerful method we show how we can use the above to "
+"perform what the ``loop`` method usually does ourselves."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:519
+msgid ""
+"This seems a bit complex but let us look at what is being done. "
+"``initialize`` is called once per particle and each of their densities is "
+"set to zero. Then when ``loop_all`` is called it is called once per "
+"destination particle (unlike ``loop`` which is called pairwise for each "
+"destination and source particle). The ``loop_all`` is passed arrays as is "
+"typical of most equations but is also passed the ``SPH_KERNEL`` itself, the "
+"list of neighbors, and the number of neighbors."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:527
+msgid ""
+"The code first declares the variables, ``i, s_idx`` as an integer and long, "
+"and then ``x_ij`` as a 3-element array. These are important for performance "
+"in the generated code. The code then loops over all neighbors and computes "
+"the summation density. Notice how the kernel is computed using "
+"``SPH_KERNEL.kernel(...)``. Notice also how the source index, ``s_idx`` is "
+"found from the neighbors."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:534
+msgid ""
+"This above ``loop_all`` code does exactly what the following single line of "
+"code does."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:542
+msgid ""
+"However, ``loop`` is only called pairwise and there are times when we want "
+"to do more with the neighbors. For example if we wish to setup a matrix and "
+"solve it per particle, we could do it in ``loop_all`` efficiently. This is "
+"also very useful for non-pairwise interactions which are common in other "
+"particle methods like molecular dynamics."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:549
+msgid "Calling user-defined functions from equations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:551
+msgid ""
+"Sometimes we may want to call a user-defined function from the equations. "
+"Any pure Python function defined using the same conventions as listed above "
+"(with suitable type hints) can be called from the equations. Here is a "
+"simple example from one of the tests in PySPH."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:568
+msgid ""
+"Notice that ``initialize`` is calling the ``helper`` function defined above."
+" The helper function has a default argument to indicate to our code "
+"generation that x is a floating point number. We could have also set the "
+"default argument to a list and this would then be passed an array of values."
+" The ``_get_helpers_`` method returns a list of functions and these "
+"functions are automatically transpiled into high-performance C or "
+"OpenCL/CUDA code and can be called from your equations."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:576
+msgid "Here is a more complex helper function."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:594
+msgid ""
+"The trace function effectively is converted into a function with signature "
+"``double trace(double* x, int nx)`` and thus can be called with any one-"
+"dimensional array."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:599
+msgid "Calling arbitrary Python functions from a Group"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:601
+msgid ""
+"Sometimes, you may need to implement something that is hard to write (at "
+"least initially) with the constraints that PySPH places. For example if you "
+"need to implement an algorithm that requires more complex data structures "
+"and you want to do it easily in Python. There are ways to call arbitrary "
+"Python code from the application already but sometimes you need to do this "
+"during every acceleration evaluation. To support this the :py:class:`Group` "
+"class supports two additional keyword arguments called ``pre`` and ``post``."
+" These can be any Python callable that take no arguments. Any callable "
+"passed as ``pre`` will be called *before* any equation related code is "
+"executed and ``post`` will be executed after the entire group is finished. "
+"If the group is iterated, it should call those functions repeatedly."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:613
+msgid ""
+"Now these functions are pure Python functions so you may choose to do "
+"anything in them. These are not called within an OpenMP context and if you "
+"are using the OpenCL or CUDA backends again this will simply be a Python "
+"function call that has nothing to do with the particular backend. However, "
+"since it is arbitrary Python, you can choose to implement the code using any"
+" approach you choose to do. This should be flexible enough to customize "
+"PySPH greatly."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:622
+msgid "Conditional execution of groups"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:624
+msgid ""
+"A :py:class:`Group` takes a keyword argument called ``condition`` which can "
+"be any Python callable (function/method). This callable is passed the values"
+" of ``t, dt``. If the function returns ``True`` then the group is executed, "
+"otherwise it is not. This is useful in situations when you say want to run a"
+" specific set of equations only every 20 iterations. Or you want to move an "
+"object only at a specified time. Here is a quick pseudo-example, we define "
+"the ``Group`` as below::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:648
+msgid ""
+"In the above pseudo-code the idea is that only when the ``check_time`` "
+"returns ``True`` will the density filter group be executed. You can also "
+"pass a method instead of a function. The only condition is that it should "
+"accept the two arguments ``t, dt``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:656
+msgid "Controlling the looping over destination particles"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:658
+msgid ""
+"Sometimes (this is pretty rare) you may want to only iterate over a subset "
+"of the particles. Usually, the iterations over the destinations are "
+"performed roughly like the following pure Python code:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:667
+msgid ""
+"The :py:class:`Group` class also takes a ``start_idx`` argument which "
+"defaults to 0 and a ``stop_idx`` which defaults to the total number of "
+"particles. One can pass either a number or a string with a property/constant"
+" whose first item will be used as the number. For example you could have "
+"this:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:681
+msgid ""
+"This would iterate from the index number 10 to the index number 19, i.e. "
+"similar to using a ``range(10, 20)``. You could also do:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:693
+msgid ""
+"Where ``'n_body'`` is a constant available in the destination particle "
+"array."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:695
+msgid ""
+"Another instance where this could be useful is when you want to run an "
+"equation only on the ghost particles, i.e. when ``real`` is False. In this "
+"case, let us say there are 5000 real particles, we could simply pass "
+"``start_idx=5000, real=False`` and it will only iterate over the non-real "
+"particles."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:703
+msgid "Writing integrators"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:708
+msgid ""
+"Similar rules apply when writing an :py:class:`IntegratorStep`. One can "
+"create a multi-stage integrator as follows:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:725
+msgid ""
+"In this case, the ``initialize, stage1, stage2``, methods are transpiled and"
+" called but the ``py_stage1, py_stage2`` are pure Python functions called "
+"before the respective ``stage`` functions are called. Defining the "
+"``py_stage1`` or ``py_stage2`` methods are optional. If you have defined "
+"them, they will be called automatically. They are passed the destination "
+"particle array, the current time, and current timestep."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:734
+msgid "Different equations for different stages"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:736
+msgid ""
+"By default, when one creates equations the implicit assumption is that the "
+"same right-hand-side is evaluated at each stage of the integrator. However, "
+"some schemes require that one solve different equations for different "
+"integrator stages. PySPH does support this but to do this when one creates "
+"equations in the application, one should return an instance of "
+":py:class:`pysph.sph.equation.MultiStageEquations`. For example:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:754
+msgid ""
+"In the above, note that each element of ``eqs`` is a list, it could have "
+"also been a group. Each item of the given equations is treated as a separate"
+" collection of equations which is to be used. The use of the "
+":py:class:`pysph.sph.equation.MultiStageEquations` tells PySPH that multiple"
+" equation sets are being used."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:760
+msgid ""
+"Now that we have this, how do we call the right accelerations at the right "
+"times? We do this by sub-classing the "
+":py:class:`pysph.sph.integrator.Integrator`. We show a simple example from "
+"our test suite to illustrate this:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:782
+msgid ""
+"Note that the ``compute_accelerations`` method takes two arguments, the "
+"``index`` (which defaults to zero) and ``update_nnps`` which defaults to "
+"``True``. A simple integrator with a single RHS would simply call "
+"``self.compute_accelerations()``. However, in the above, the first set of "
+"equations is called first, and then for the second stage the second set of "
+"equations is evaluated but without updating the NNPS (handy if the particles"
+" do not move in stage1). Note the call ``self.update_domain()`` after the "
+"second stage, this sets up any ghost particles for periodicity when "
+"particles have been moved, it also updates the neighbor finder to use an "
+"appropriate neighbor length based on the current smoothing length. If you do"
+" not need to do this for your particular integrator you may choose not to "
+"add this. In the above case, the domain is not updated after the first stage"
+" as the particles have not moved."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:796
+msgid ""
+"The above illustrates how one can create more complex integrators that "
+"employ different accelerations in each stage."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:801
+msgid "Examples to study"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:803
+msgid ""
+"The following equations provide good examples for how one could use/write "
+"the ``reduce`` method:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:806
+msgid ""
+":py:class:`pysph.sph.gas_dynamics.basic.SummationDensityADKE`: relatively "
+"simple."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:807
+msgid ""
+":py:class:`pysph.sph.rigid_body.RigidBodyMoments`: this is pretty complex."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:808
+msgid ""
+":py:class:`pysph.sph.iisph.PressureSolve`: relatively straight-forward."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:810
+msgid "The equations that demonstrate the ``converged`` method are:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:812
+msgid ""
+":py:class:`pysph.sph.gas_dynamics.basic.SummationDensity`: relatively "
+"simple."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:813
+msgid ":py:class:`pysph.sph.iisph.PressureSolve`."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:815
+msgid ""
+"Some equations that demonstrate using matrices and solving systems of "
+"equations are:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:818
+msgid ":py:class:`pysph.sph.wc.density_correction.MLSFirstOrder2D`."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:819
+msgid ":py:class:`pysph.sph.wc.density_correction.MLSFirstOrder3D`."
+msgstr ""
+
+#: ../../pysph/docs/source/design/equations.rst:820
+msgid ":py:class:`pysph.sph.wc.kernel_correction.GradientCorrection`."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:5
+msgid "Writing inlet oulet manager"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:7
+msgid ""
+"This section discusses writing your own Inlet Outlet Manager (IOM). If you "
+"want to use the existing IOM subclass present in PySPH see "
+":ref:`flow_past_cylinder`. The IOM manages all the inputs required to "
+"simulate the open boundaries in PySPH. It has the following functions:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:12
+msgid "Create ghost particles"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:13
+msgid "Create inlet/outlet stepper"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:14
+msgid "Creation of inlet/outlet equations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:15
+msgid "Creation of inlet/outlet particle updater"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:22
+msgid "The brief overview of :py:class:`InletOutletManager` subclass::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:65
+msgid ""
+"The `IOM` gets initialized in the ``configure_scheme`` method in the "
+":py:class:`Application` instance."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:68
+msgid ""
+"The IOM is initialized using the list of fluid particle array "
+"``fluid_arrays``, and ``inlet_info`` and ``outlet_info`` instances of "
+":py:class:`InletInfo` and :py:class:`OutletInfo`, respectively. These info "
+"class contains the information of inlet/outlet like direction, size etc."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:73
+msgid ""
+"To explain the inlet outlet manager in detail, let us consider the mirror "
+"boundary implemented using IOM class in `simple_inlet_outlet.py "
+"<https://github.com/pypr/pysph/blob/master/pysph/sph/bc/mirror/simple_inlet_outlet.py>`_"
+" for `EDACScheme "
+"<https://github.com/pypr/pysph/blob/master/pysph/sph/wc/edac.py>`_::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:139
+msgid ""
+"The additional properties can be added in the function ``add_io_properties``"
+" which is called in the function ``setup_properties`` of a "
+":py:class:`Scheme` instance."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:143
+msgid ""
+"The ``get_stepper`` function passes the appropriate stepper for the inlet "
+"and outlet in the ``configure_solver`` method of the :py:class:`Scheme` "
+"instance."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:146
+msgid ""
+"The ``get_equations`` and ``get_equations_post_compute_acceleration`` "
+"provides the additional equations to be used to interpolate properties from "
+"fluid particle arrays. This is to be called in ``create_equations`` method "
+"of the :py:class:`Scheme` instance."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:151
+msgid ""
+"Any additional data required from the :py:class:`Application` or "
+":py:class:`Scheme` instance can be passed to the IOM using ``setup_iom`` "
+"method."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:155
+msgid "Additionally, in the :py:class:`Application` instance:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:157
+msgid ""
+"The ``get_inlet_outlet`` methods provides the instances for the "
+":py:class:`Inlet` and :py:class:`Outlet` which updates the particles when "
+"they cross the interface. This method is called in ``create_inlet_outlet`` "
+"method of the :py:class:`Application` instance."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:162
+msgid ""
+"In mirror type inlet-outlet a ghost layer of particles is required which is "
+"a mere reflection about the inlet/outlet-fluid interface. It is created in "
+"``create_particles`` using ``create_ghost``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:166
+msgid ""
+"The IOM enables the management of the above steps easy to handle. An example"
+" showing the usage of IOM is the `flow_past_cylinder_2d.py "
+"<https://github.com/pypr/pysph/tree/master/pysph/examples/flow_past_cylinder_2d.py>`_."
+msgstr ""
+
+#: ../../pysph/docs/source/design/iom.rst:172
+msgid ""
+"The IOM is a convenience to manage various attributes of inlet/outlet "
+"implementation in PySPH but all this is not automatic. The user has to take "
+"care of appropriate invocation of the methods in the IOM in "
+":py:class:`Application` and :py:class:`Scheme` instances."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:5
+msgid "The PySPH framework"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:7
+msgid ""
+"This document is an introduction to the design of PySPH. This provides "
+"additional high-level details on the functionality that the PySPH framework "
+"provides.  This should allow you to use PySPH effectively and extend the "
+"framework to solve problems other than those provided in the main "
+"distribution."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:13
+msgid ""
+"To elucidate some of the internal details of PySPH, we will consider a "
+"typical SPH problem and proceed to write the code that implements it. "
+"Thereafter, we will look at how this is implemented using the PySPH "
+"framework."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:18
+msgid "The dam-break problem"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:20
+msgid ""
+"The problem that is used for the illustration is the Weakly Compressible SPH"
+" (WCSPH) formulation for free surface flows, applied to a breaking dam "
+"problem:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:27
+msgid ""
+"A column of water is initially at rest (presumably held in place by some "
+"membrane). The problem simulates a breaking dam in that the membrane is "
+"instantly removed and the column is free to fall under its own weight and "
+"the effect of gravity. This and other variants of the dam break problem can "
+"be found in the `examples` directory of PySPH."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:35
+msgid "Equations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:37
+msgid "The discrete equations for this formulation are given as"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:39
+msgid "p_a = B\\left( \\left(\\frac{\\rho_a}{\\rho_0}\\right)^{\\gamma} - 1 \\right )"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:44
+msgid ""
+"\\frac{d\\rho_a}{dt} = \\sum_{b=1}^{N}m_b\\,(\\vec{v_b} - "
+"\\vec{v_a})\\cdot\\,\\nabla_a W_{ab}"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:49
+msgid ""
+"\\frac{d\\vec{v_a}}{dt} = -\\sum_{b=1}^Nm_b\\left(\\frac{p_a}{\\rho_a^2} + "
+"\\frac{p_b}{\\rho_b^2}\\right)\\nabla W_{ab}"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:54
+msgid "\\frac{d\\vec{x_a}}{dt} = \\vec{v_a}"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:60
+msgid "Boundary conditions"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:62
+msgid ""
+"The dam break problem involves two *types* of particles. Namely, the *fluid*"
+" (water column) and *solid* (tank). The basic boundary condition enforced on"
+" a solid wall is the no-penetration boundary condition which can be stated "
+"as"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:67
+msgid "\\vec{v_f}\\cdot \\vec{n_b} = 0"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:71
+msgid ""
+"Where :math:`\\vec{n_b}` is the local normal vector for the boundary. For "
+"this example, we use the *dynamic boundary conditions*. For this boundary "
+"condition, the boundary particles are treated as *fixed* fluid particles "
+"that evolve with the continuity (:eq:`continuity`) and equation the of state"
+" (:eq:`eos`). In addition, they contribute to the fluid acceleration via the"
+" momentum equation (:eq:`momentum`). When fluid particles approach a solid "
+"wall, the density of the fluids and the solids increase via the continuity "
+"equation. With the increased density and consequently increased pressure, "
+"the boundary particles express a repulsive force on the fluid particles, "
+"thereby enforcing the no-penetration condition."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:84
+msgid "Time integration"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:86
+msgid ""
+"For the time integration, we use a second order predictor-corrector "
+"integrator. For the predictor stage, the following operations are carried "
+"out:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:90
+msgid ""
+"\\rho^{n + \\frac{1}{2}} = \\rho^n + \\frac{\\Delta t}{2}(a_\\rho)^{n-\\frac{1}{2}} \\\\\n"
+"\n"
+"\\boldsymbol{v}^{n + \\frac{1}{2}} = \\boldsymbol{v}^n + \\frac{\\Delta t}{2}(\\boldsymbol{a_v})^{n-\\frac{1}{2}} \\\\\n"
+"\n"
+"\\boldsymbol{x}^{n + \\frac{1}{2}} = \\boldsymbol{x}^n + \\frac{\\Delta t}{2}(\\boldsymbol{u} + \\boldsymbol{u}^{\\text{XSPH}})^{n-\\frac{1}{2}}"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:99
+msgid ""
+"Once the variables are predicted to their half time step values, the "
+"pairwise interactions are carried out to compute the accelerations. "
+"Subsequently, the corrector is used to update the particle positions:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:104
+msgid ""
+"\\rho^{n + 1} = \\rho^n + \\Delta t(a_\\rho)^{n+\\frac{1}{2}} \\\\\n"
+"\n"
+"\\boldsymbol{v}^{n + 1} = \\boldsymbol{v}^n + \\Delta t(\\boldsymbol{a_v})^{n+\\frac{1}{2}} \\\\\n"
+"\n"
+"\\boldsymbol{x}^{n + 1} = \\boldsymbol{x}^n + \\Delta t(\\boldsymbol{u} + \\boldsymbol{u}^{\\text{XSPH}})^{n+\\frac{1}{2}}"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:115
+msgid ""
+"The acceleration variables are *prefixed* like :math:`a_`. The boldface "
+"symbols in the above equations indicate vector quantities. Thus "
+":math:`a_\\boldsymbol{v}` represents :math:`a_u,\\, a_v,\\, \\text{and}\\, "
+"a_w` for the vector components of acceleration."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:122
+msgid "Required arrays and properties"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:124
+msgid ""
+"We will be using two **ParticleArrays** (see "
+":py:class:`pysph.base.particle_array.ParticleArray`), one for the fluid and "
+"another for the solid. Recall that for the dynamic boundary conditions, the "
+"solid is treated like a fluid with the only difference being that the "
+"velocity (:math:`a_\\boldsymbol{v}`) and position accelerations "
+"(:math:`a_\\boldsymbol{x} = \\boldsymbol{u} + "
+"\\boldsymbol{u}^{\\text{XSPH}}`) are never calculated. The solid particles "
+"therefore remain fixed for the duration of the simulation."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:132
+msgid ""
+"To carry out the integrations for the particles, we require the following "
+"variables:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:135
+msgid "SPH properties: `x, y, z, u, v, w, h, m, rho, p, cs`"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:136
+msgid "Acceleration variables: `au, av, aw, ax, ay, az, arho`"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:137
+msgid ""
+"Properties at the beginning of a time step: `x0, y0, z0, u0, v0, w0, rho0`"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:141
+msgid "A non-PySPH implementation"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:143
+msgid ""
+"We first consider the pseudo-code for the non-PySPH implementation. We "
+"assume we have been given two **ParticleArrays** `fluid` and `solid` "
+"corresponding to the dam-break problem. We also assume that an "
+":py:class:`pysph.base.nnps.NNPS` object `nps` is available and can be used "
+"for neighbor queries:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:156
+msgid ""
+"The part of the code responsible for the interactions can be defined as"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:252
+msgid ""
+"We see that the use of multiple particle arrays has forced us to write a "
+"fairly long piece of code for the accelerations. In fact, we have only shown"
+" the part of the main loop that computes :math:`a_\\rho` for the continuity "
+"equation. Recall that our problem states that the continuity equation should"
+" evaluated for all particles, taking influences from all other particles "
+"into account. For two particle arrays (*fluid*, *solid*), we have four such "
+"pairings (fluid-fluid, fluid-solid, solid-fluid, solid-solid). The last one "
+"can be eliminated when we consider the that the boundary has zero velocity "
+"and hence the contribution will always be trivially zero."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:263
+msgid ""
+"The apparent complexity of the `SPHCalc.accelerations` method "
+"notwithstanding, we notice that similar pieces of the code are being "
+"repeated. In general, we can break down the computation for a general "
+"source-destination pair like so:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:285
+msgid ""
+"The `SPHCalc.compute` method first calls the EOS before calling the main "
+"loop to compute the accelerations. This is because the EOS (which updates "
+"the pressure) must logically be completed for all particles before the "
+"accelerations (which uses the pressure) are computed."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:291
+msgid "The predictor-corrector integrator for this problem can be defined as"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:333
+msgid ""
+"The `Integrator.integrate` method is responsible for updating the solution "
+"the next time level. Before the predictor stage, the `Integrator.initialize`"
+" method is called to store the values `x0, y0...` at the beginning of a "
+"time-step. Given the positions of the particles at the half time-step, the "
+"**NNPS** data structure is updated before calling the `SPHCalc.compute` "
+"method. Finally, the corrector step is called once we have the updated "
+"accelerations."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:341
+msgid ""
+"This hypothetical implementation can be integrated to the final time by "
+"calling the `Integrator.integrate` method repeatedly. In the next section, "
+"we will see how PySPH does this automatically."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:346
+msgid "PySPH implementation"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:348
+msgid ""
+"Now that we have a hypothetical implementation outlined, we can proceed to "
+"describe the abstractions that PySPH introduces, enabling a highly user "
+"friendly and flexible way to define pairwise particle interactions.  To see "
+"a working example, see `dam_break_2d.py "
+"<https://github.com/pypr/pysph/tree/master/pysph/examples/dam_break_2d.py>`_."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:354
+msgid ""
+"We assume that we have the same **ParticleArrays** (*fluid* and *solid*) and"
+" **NNPS** objects as before."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:358
+msgid "Specifying the equations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:360
+msgid ""
+"Given the particle arrays, we ask for a given set of operations to be "
+"performed on the particles by passing a *list* of **Equation** objects (see "
+":doc:`../reference/equations`) to the **Solver** (see "
+":py:class:`pysph.solver.solver.Solver`)"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:392
+msgid ""
+"We see that we have used two **Group** objects (see "
+":py:class:`pysph.sph.equation.Group`), segregating two parts of the "
+"evaluation that are logically dependent. The second group, where the "
+"accelerations are computed *must* be evaluated after the first group where "
+"the pressure is updated. Recall we had to do a similar seggregation for the "
+"`SPHCalc.compute` method in our hypothetical implementation:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:410
+msgid ""
+"PySPH will respect the order of the **Equation** and equation **Groups** as "
+"provided by the user. This flexibility also means it is quite easy to make "
+"subtle errors."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:414
+msgid ""
+"Note that in the first group, we have an additional parameter called "
+"``real=False``. This is only relevant for parallel simulations and for "
+"simulations with periodic boundaries. What it says is that the equations in "
+"that group should be applied to all particles (remote and local), non-local "
+"particles are not \"real\". By default a ``Group`` has ``real=True``, thus "
+"only local particles are operated on. However, we wish to apply the Equation"
+" of state on all particles. Similar is the case for periodic problems where "
+"it is sometimes necessary to set ``real=True`` in order to set the "
+"properties of the additional particles used for periodicity."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:425
+msgid "Writing the equations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:427
+msgid ""
+"It is important for users to be able to easily write out new SPH equations "
+"of motion.  PySPH provides a very convenient way to write these equations.  "
+"The PySPH framework allows the user to write these equations in pure Python."
+" These pure Python equations are then used to generate high-performance code"
+" and then called appropriately to perform the simulations."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:433
+msgid "There are two types of particle computations in SPH simulations:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:435
+msgid ""
+"The most common type of interaction is to change the property of one "
+"particle (the destination) using the properties of a source particle."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:438
+msgid ""
+"A less common type of interaction is to calculate say a sum (or product or "
+"maximum or minimum) of values of a particular property.  This is commonly "
+"called a \"reduce\" operation in the context of Map-reduce_ programming "
+"models."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:443
+msgid ""
+"Computations of the first kind are inherently parallel and easy to perform "
+"correctly both in serial and parallel.  Computations of the second kind "
+"(reductions) can be tricky in parallel.  As a result, in PySPH we "
+"distinguish between the two.  This will be elaborated in more detail in the "
+"following."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:451
+msgid ""
+"In general an SPH algorithm proceeds as the following pseudo-code "
+"illustrates:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:474
+msgid ""
+"The neighbors of a given particle are identified using a nearest neighbor "
+"algorithm.  PySPH does this automatically for the user and internally uses a"
+" link-list based algorithm to identify neighbors."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:478
+msgid ""
+"In PySPH we follow some simple conventions when writing equations. Let us "
+"look at a few equations first. In keeping the analogy with our hypothetical "
+"implementation and the `SPHCalc.accelerations` method above, we consider the"
+" implementations for the PySPH :py:class:`pysph.sph.wc.basic.TaitEOS` and "
+":py:class:`pysph.sph.basic_equations.ContinuityEquation` objects. The former"
+" looks like:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:505
+msgid ""
+"Notice that it has only one ``loop`` method and this loop is applied for all"
+" particles.  Since there are no sources, there is no need for us to find the"
+" neighbors. There are a few important conventions that are to be followed "
+"when writing the equations."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:524
+msgid ""
+"Let us look at the :py:class:`ContinuityEquation` as another simple example."
+" It is instantiated as:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:537
+msgid ""
+"Notice that the ``initialize`` method merely sets the value to zero.  The "
+"``loop`` method also accepts a few new quantities like ``DWIJ``, ``VIJ`` "
+"etc. These are precomputed quantities and are automatically provided "
+"depending on the equations needed for a particular source/destination pair."
+"  The following precomputed quantites are available and may be passed into "
+"any equation:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:584
+msgid ""
+"Note that all standard functions and constants in ``math.h`` are available "
+"for use in the equations. The value of :math:`\\pi` is available in "
+"``M_PI``. Please avoid using functions from ``numpy`` as these are Python "
+"functions and are slow. They also will not allow PySPH to be run with "
+"OpenMP. Similarly, do not use functions or constants from ``sympy`` and "
+"other libraries inside the equation methods as these will significantly slow"
+" down your code."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:625
+msgid ""
+"One can also declare any valid c-type using the same approach, for example "
+"if one desires a ``long`` data type, one may use ``ii = declare(\"long\")``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:657
+msgid ""
+"We recommend that for any kind of reductions one always use the "
+"``serial_reduce_array`` function and the ``parallel_reduce_array`` inside a "
+"``reduce`` method. One should not worry about parallel/serial modes in this "
+"case as this is automatically taken care of by the code generator. In "
+"serial, the parallel reduction does nothing."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:669
+msgid ""
+"If you wish to use adaptive time stepping, see the code "
+":py:class:`pysph.sph.integrator.Integrator`. The integrator uses information"
+" from the arrays ``dt_cfl``, ``dt_force``, and ``dt_visc`` in each of the "
+"particle arrays to determine the most suitable time step."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:674
+msgid ""
+"For a more focused discussion on how you should write equations, please see "
+":ref:`writing_equations`."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:679
+msgid "Writing the Integrator"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:681
+msgid ""
+"The integrator stepper code is similar to the equations in that they are all"
+" written in pure Python and Cython code is automatically generated from it. "
+"The simplest integrator is the Euler integrator which looks like this::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:693
+msgid ""
+"Note that in this case the integrator only needs to implement one timestep "
+"using the ``one_timestep`` method above.  The ``initialize`` and ``stage`` "
+"methods need to be implemented in stepper classes which perform the actual "
+"stepping of the values.  Here is the stepper for the Euler integrator::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:713
+msgid ""
+"As can be seen the general structure is very similar to how equations are "
+"written in that the functions take an arbitrary number of arguments and are "
+"set.  The value of ``dt`` is also provided automatically when the methods "
+"are called."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:718
+msgid ""
+"It is important to note that if there are additional variables to be stepped"
+" in addition to these standard ones, you must write your own stepper. "
+"Currently, only certain steppers are supported by the framework. Take a look"
+" at the :doc:`../reference/integrator` for more examples."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:727
+msgid "Simulating periodicity"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:729
+msgid ""
+"PySPH provides a simplistic implementation for problems with periodicity. "
+"The :py:class:`pysph.base.nnps_base.DomainManager` is used to specify this. "
+"To use this in an application simply define a method as follows:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:746
+msgid ""
+"This is a 2D example but something similar can be done in 3D. How this works"
+" is that PySPH will automatically copy the appropriate layer of the "
+"particles from each side of the domain and create \"Ghost\" particles (these"
+" are not \"real\" particles). The properties of the particles will also be "
+"copied but this is done before any accelerations are computed. Note that "
+"this implies that the real particles should be created carefully so as to "
+"avoid two particles being placed at the same location."
+msgstr ""
+
+#: ../../pysph/docs/source/design/overview.rst:754
+msgid ""
+"For example in the above example, the domain is defined in the unit square "
+"with one corner at the origin and the other at (1,1). If we place any "
+"particles exactly at :math:`x=0.0` they will be copied over to 1.0 and if we"
+" place any particles at :math:`x=1.0` they will be copied to :math:`x=0`. "
+"This will mean that there will be one real particle at 0 and a copy from 1.0"
+" as well at the same location. It is therefore important to initialize the "
+"particles starting at ``dx/2`` and all the way up-to ``1.0-dx/2`` so as to "
+"get a uniform distribution of particles without any repetitions. It is "
+"important to remember that the periodic particles will be \"ghost\" "
+"particles and so any equations that set properties like pressure should be "
+"in a group with ``real=False``."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:2
+msgid "Solver Interfaces"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:4
+msgid ""
+"Interfaces are a way to control, gather data and execute commands on a "
+"running solver instance. This can be useful for example to pause/continue "
+"the solver, get the iteration count, get/set the dt or final time or simply "
+"to monitor the running of the solver."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:13
+msgid "CommandManager"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:15
+msgid ""
+"The :py:class:`CommandManager` class provides functionality to control the "
+"solver in a restricted way so that adding multiple interfaces to the solver "
+"is possible in a simple way."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:19
+msgid ""
+"The figure :ref:`image_controller` shows an overview of the classes and "
+"objects involved in adding an interface to the solver."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:27
+msgid "Overview of the Solver Interfaces"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:29
+msgid "The basic design of the controller is as follows:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:31
+msgid ""
+":py:class:`~pysph.solver.solver.Solver` has a method "
+":py:meth:`~pysph.solver.solver.Solver.set_command_handler` takes a callable "
+"and a command_interval, and calls the callable with self as an argument "
+"every `command_interval` iterations"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:36
+msgid ""
+"The method :meth:`CommandManager.execute_commands` of `CommandManager` "
+"object is set as the command_handler for the solver. Now `CommandManager` "
+"can do any operation on the solver"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:40
+msgid ""
+"Interfaces are added to the `CommandManager` by the "
+":meth:`CommandManager.add_interface` method, which takes a callable "
+"(Interface) as an argument and calls the callable in a separate thread with "
+"a new :class:`Controller` instance as an argument"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:44
+msgid ""
+"A `Controller` instance is a proxy for the `CommandManager` which redirects "
+"its methods to call :meth:`CommandManager.dispatch` on the `CommandManager`,"
+" which is synchronized in the `CommandManager` class so that only one thread"
+" (Interface) can call it at a time. The `CommandManager` queues the commands"
+" and sends them to all procs in a parallel run and executes them when the "
+"solver calls its :meth:`execute_commands` method"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:51
+msgid ""
+"Writing a new Interface is simply writing a function/method which calls "
+"appropriate methods on the :class:`Controller` instance passed to it."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:57
+msgid "Controller"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:59
+msgid ""
+"The :py:class:`Controller` class is a convenience class which has various "
+"methods which redirect to the :py:meth:`Controller.dispatch` method to do "
+"the actual work of queuing the commands. This method is synchronized so that"
+" multiple controllers can operate in a thread-safe manner. It also restricts"
+" the operations which are possible on the solver through various interfaces."
+" This enables adding multiple interfaces to the solver convenient and safe. "
+"Each interface gets a separate Controller instance so that the various "
+"interfaces are isolated."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:69
+msgid "Blocking and Non-Blocking mode"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:71
+msgid ""
+"The :py:class:`Controller` object has a notion of Blocking and Non-Blocking "
+"mode."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:73
+msgid ""
+"In **Blocking** mode operations wait until the command is actually executed "
+"on the solver and then return the result. This means execution stops until "
+"the execute_commands method of the :py:class:`CommandManager` is executed by"
+" the solver, which is after every "
+":py:attr:`~pysph.solver.solver.Solver.commmand_interval` iterations. This "
+"mode is the default."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:79
+msgid ""
+"In **Non-Blocking** mode the Controller queues the command for execution and"
+" returns a task_id of the command. The result of the command can then be "
+"obtained anytime later by the get_result method of the Controller passing "
+"the task_id as argument. The get_result call blocks until result can be "
+"obtained."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:84
+msgid "**Switching between modes**"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:86
+msgid ""
+"The blocking/non-blocking modes can be get/set using the methods "
+":py:meth:`Controller.get_blocking` and :py:meth:`Controller.set_blocking` "
+"methods"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:89
+msgid ""
+"**NOTE :** The blocking/non-blocking mode is not for getting/setting solver "
+"properties. These methods always return immediately, even if the setter is "
+"actually executed only when the :py:meth:`CommandManager.execute_commands` "
+"function is called by the solver."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:99
+msgid "Interfaces"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:101
+msgid ""
+"Interfaces are functions which are called in a separate thread and receive a"
+" :py:class:`Controller` instance so that they can query the solver, get/set "
+"various properties and execute commands on the solver in a safe manner."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:105
+msgid ""
+"Here's the example of a simple interface which simply prints out the "
+"iteration count every second to monitor the solver"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:119
+msgid ""
+"You can use ``dir(controller)`` to find out what methods are available on "
+"the controller instance."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:122
+msgid ""
+"A few simple interfaces are implemented in the "
+":py:mod:`~pysph.solver.solver_interfaces` module, namely "
+":py:class:`CommandlineInterface`, :py:class:`XMLRPCInterface` and "
+":py:class:`MultiprocessingInterface`, and also in "
+"`examples/controller_elliptical_drop_client.py`. You can check the code to "
+"see how to implement various kinds of interfaces."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:129
+msgid "Adding Interface to Solver"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:131
+msgid ""
+"To add interfaces to a plain solver (not created using "
+":py:class:`~pysph.solver.application.Application`), the following steps need"
+" to be taken:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:134
+msgid ""
+"Set :py:class:`~pysph.solver.controller.CommandManager` for the solver (it "
+"is not setup by default)"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:135
+msgid "Add the interface to the CommandManager"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:137
+msgid ""
+"The following code demonstrates how the the :ref:`Simple Interface "
+"<simple_interface>` created above can be added to a solver::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:147
+msgid ""
+"For code which uses :py:class:`~pysph.solver.application.Application`, you "
+"simply need to add the interface to the application's command_manager::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:157
+msgid "Commandline Interface"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:159
+msgid ""
+"The :py:class:`CommandLine` interface enables you to control the solver from"
+" the commandline even as it is running. Here's a sample session of the "
+"command-line interface from the controller_elliptical_drop.py example::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:183
+msgid "The number inside the square brackets indicates the iteration count."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:185
+msgid ""
+"Note that not all operations can be performed using the command-line "
+"interface, notably those which use complex python objects."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:190
+msgid "XML-RPC Interface"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:192
+msgid ""
+"The :py:class:`XMLRPCInterface` interface exports the controller object's "
+"methods over an XML-RPC interface. An example html file "
+"`controller_elliptical_drop_client.html` uses this XML-RPC interface to "
+"control the solver from a web page."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:197
+msgid ""
+"The following code snippet shows the use of XML-RPC interface, which is not "
+"much different from any other interface, as they all export the interface of"
+" the Controller object::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:212
+msgid ""
+"The XML-RPC interface also implements a simple http server which serves "
+"html, javascript and image files from the directory it is started from. This"
+" enables direct use of the file `controller_elliptical_drop_client.html` to "
+"get an html interface without the need of a dedicated http server."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:218
+msgid ""
+"The figure :ref:`fig_html_client` shows a screenshot of the html client in "
+"action"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:225
+msgid "PySPH html client using XML-RPC interface"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:227
+msgid ""
+"One limitation of XML-RPC interface is that arbitrary python objects cannot "
+"be sent across. XML-RPC standard predefines a limited set of types which can"
+" be transferred."
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:233
+msgid "Multiprocessing Interface"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:235
+msgid ""
+"The :py:class:`MultiprocessingInterface` interface also exports the "
+"controller object similar to the XML-RPC interface, but it is more featured,"
+" can use authentication keys and can send arbitrary picklable objects. Usage"
+" of Multiprocessing client is also similar to the XML-RPC client::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:256
+msgid "Example"
+msgstr ""
+
+#: ../../pysph/docs/source/design/solver_interfaces.rst:258
+msgid ""
+"Here's an example (straight from `controller_elliptical_drop_client.py`) put"
+" together to show how the controller can be used to create useful interfaces"
+" for the solver. The code below plots the particle positions as a scatter "
+"map with color-mapped velocities, and updates the plot every second while "
+"maintaining user interactivity::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:5
+msgid "ParticleArray"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:7
+msgid ""
+"Particles are ubiquitous in SPH and in PySPH. The domain is discretized with"
+" a finite number of points, to which are assigned physical properties "
+"corresponding to the fluid being modelled. This leads us to the concept of a"
+" set of arrays that represent a fluid."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:12
+msgid ""
+"In PySPH, a *homogeneous* collection of particles is represented by a "
+"**ParticleArray** as shown in the figure:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:20
+msgid ""
+"The figure shows only a subset of the attributes of a **ParticleArray** "
+"pertinent to this discussion. Refer to the reference documentation "
+"(:doc:`../reference/particle_array`) for a more complete listing of class "
+"attributes and methods."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:27
+msgid "Creating particle arrays"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:29
+msgid ""
+"From the user's perspective, a :class:`ParticleArray` may be created like "
+"so: ..  sourcecode:: python"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:32
+msgid "import numpy"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:34
+msgid "# Import the base module import pysph.base.api as base"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:37
+msgid ""
+"# create the numpy arrays representing the properties x = "
+"numpy.linspace(...) y = numpy.linspace(...) . . . f = numpy.sin(x)"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:45
+msgid "fluid = base.get_particle_array(name=\"fluid\", x=x, y=y, ..., f=f)"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:47
+msgid ""
+"This creates an instance of a :class:`ParticleArray`, *fluid* with the "
+"requested properties. From within python, the properties may be accessed via"
+" the standard attribute access method for Python objects::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:56
+msgid "Important ParticleArray attributes"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:60
+msgid "**name**: PySPH permits the use of multiple arrays and warrants the"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:59
+msgid ""
+"use of a unique name identifier to distinguish between different particle "
+"arrays."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:63
+msgid "**constants**: Properties that are constant in space and time for all"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:63
+msgid "particles of a given type are stored in the *constants* attribute."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:72
+msgid "**is_dirty**: In PySPH, the indexing scheme for the particles may be"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:66
+msgid ""
+"rendered invalid after updating the particle properties. Moreover, other "
+"particle arrays like stationary boundaries remain fixed and the initial "
+"indexing is valid.. The *is_dirty* flag essentially helps PySPH distinguish "
+"these two cases, thus saving time that would have been spent re-indexing "
+"these particles. Thus, setting the *is_dirty* flag for a "
+":class:`ParticleArray` forces PySPH to re-compute neighbors for that array."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:79
+msgid "**num_real_particles**: Every :class:`ParticleArray` object is given a"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:75
+msgid ""
+"set of deault properties, one of which is the *tag* property. The *tag* of a"
+" particle is an integer which is used by PySPH to determine if a particle "
+"belongs to a remote processor (0 local, else remote). The "
+"*num_real_particles* attributes counts the number of properties that have "
+"the tag value 0."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:83
+msgid "Data buffers and the carray"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:85
+msgid ""
+"The numpy arrays that are used to create the :class:`ParticleArray` object "
+"are used to construct a raw data buffer which is accessible through Cython "
+"at C speed. Internally, each property for the particle array is stored as a "
+":class:`cyarray.carray.BaseArray`."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:92
+msgid ""
+"This discussion may be omitted by the casual end user. If you are extending "
+"PySPH and speed is a concern, read on."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:95
+msgid ""
+"Each :class:`carray` has an associated data type corresponding to the "
+"particle property. The available types are:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:98
+msgid "IntArray"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:99
+msgid "LongArray"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:100
+msgid "FloatArray"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:101
+msgid "DoubleArray"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:103
+msgid ""
+"The type of a :class:`carray` may be determined via it's :func:`get_c_type` "
+"method."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:106
+msgid ""
+"The :class:`carray` object provides faster access to the data when compared "
+"with the corresponding numpy arrays, even in Python. Particle properties may"
+" be accessed using the following methods:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:113
+msgid "Get the element at the specified index."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:118
+msgid ""
+"Set the element at the specified index to the given value. The value must be"
+" of the same c-type as the array."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:123
+msgid "Faster buffer access"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:125
+msgid ""
+"As mentioned, the data represented by a :class:`carray` may be accessed at C"
+" speed using Cython. This is done using the *data* attribute only accessible"
+" through Cython::"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:132
+msgid ""
+"Peep into the functions (:mod:`sph.funcs`) to learn how to use this feature."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:137
+msgid "Particles"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:139
+msgid ""
+"Since PySPH supports an arbitrary number of :class:`ParticleArray` objects, "
+"it would be convenient to group them all together into a single container. "
+"This way, common functions like updating the indexing scheme (for particle "
+"arrays that are *dirty*) may be called consistently on each array. This is "
+"accomplished by the object :class:`Particles`:"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:150
+msgid ""
+"You must provide an instance of :class:`Particles` to PySPH to carry out a "
+"simulation."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:155
+msgid "Specifying an indexing scheme"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:157
+msgid ""
+"Upon creation of a :class:`Particles` instance, we can pass arguments to "
+"indicate the kind of spatial indexing scheme to use. The default is a box "
+"sort algorithm (see :doc:`../reference/nnps`). Currently, this is the only "
+"indexing scheme implemented."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:162
+msgid ""
+"See the reference documentation :doc:`../reference/particle_array` for a "
+"further description."
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:167
+msgid "Summary"
+msgstr ""
+
+#: ../../pysph/docs/source/design/working_with_particles.rst:169
+msgid ""
+"In PySPH, a :class:`ParticleArray` object may be instantiated from numpy "
+"arrays. We may use an arbitrary collection of these objects with the only "
+"restriction that their *names* are unique.  The :class:`ParticleArray` "
+"objects are grouped together to form a :class:`Particles` object which is "
+"used by PySPH. This container may be heterogeneous in that different "
+"particle arrays correspond to different *types*."
+msgstr ""

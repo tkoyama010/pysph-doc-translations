@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013-2018, PySPH developers
+# This file is distributed under the same license as the PySPH package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PySPH 1.0b1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-01 15:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../pysph/docs/source/starcluster/overview.rst:5
+msgid "Using StarCluster with PySPH"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:7
+msgid "StarCluster is an open source cluster-computing toolkit for Amazon’s Elastic Compute Cloud (EC2). StarCluster has been designed to simplify the process of building, configuring, and managing clusters of virtual machines on Amazon’s EC2 cloud."
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:12
+msgid "Using StarCluster along with PySPH's MPI support, you can run PySPH code on multiple instances in parallel and complete simulations faster."
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:20
+msgid "Installing StarCluster"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:22
+msgid "StarCluster can be installed via pip as ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:27
+msgid "Configuring StarCluster"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:30
+msgid "Creating Configuration File"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:32
+msgid "After StarCluster has been installed, the next step is to update your StarCluster configuration ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:48
+msgid "Select the second option by typing 2 and press enter. This will give you a template to use to create a configuration file containing your AWS credentials, cluster settings, etc. The next step is to customize this file using your favorite text-editor ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:56
+msgid "Updating AWS Credentials"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:58
+msgid "This file is commented with example “cluster templates”. A cluster template defines a set of configuration settings used to start a new cluster. The config template provides a smallcluster template that is ready to go out-of-the-box. However, first, you must fill in your AWS credentials and keypair info ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:69
+msgid "To find your AWS User ID, see `Finding your Account Canonical User ID <http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId>`_"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:72
+msgid "You can get your root user credentials from the `Security Credentials <https://console.aws.amazon.com/iam/home?#security_credential>`_ page on AWS Management Console. However, root credentials allow for full access to all resources on your account and it is recommended that you create separate IAM (Identity and Access Management) user credentials for managing access to your EC2 resources. To create IAM user credentials, see `Creating IAM Users (Console) <http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console>`_ For StarCluster, create an IAM user with the ``EC2 Full Access`` permission."
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:83
+msgid "If you don't already have a keypair, you can generate one using StarCluster by running::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:88
+msgid "This will create a keypair called mykey on Amazon EC2 and save the private key to ~/.ssh/mykey.rsa. Once you have a key the next step is to fill in your keypair info in the StarCluster config file ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:95
+msgid "Also, update the following information for the smallcluster configuration::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:102
+msgid "Now that the basic configuration for StarCluster is complete, you can directly launch instances using StarCluster. However, note that EC2 charges are not pro rata and you will be charged for an entire hour even if you run an instance for a few minutes. Before attempting to deploy an instance/cluster you can modify the following information in your cluster configuration::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:114
+msgid "Now you can launch an EC2 instance using::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:118
+msgid "You can SSH into the master node by running::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:122
+msgid "You can transfer files to the nodes using the ``get`` and ``put`` commands as::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:127
+msgid "Finally, you can terminate the instance by running::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:132
+msgid "Setting up PySPH for StarCluster"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:134
+msgid "Most of the public AMIs currently distributed for StarCluster are outdated and have reached their end of life. To ensure a hassle-free experience while further extending the AMI and installing packages, you can use the 64 bit Ubuntu 16.04 AMI with AMI ID ``ami-01fdc27a`` which has most StarCluster dependencies and PySPH dependencies installed."
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:141
+msgid "Base AMI for PySPH [Optional]"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:143
+msgid "The ``ami.sh`` file which can be found in the ``starcluster`` directory in the PySPH repository automatically launches a vanilla 64-bit Ubuntu 16.04 instance, installs any necessary StarCluster and PySPH dependencies and saves an AMI with this configuration on your AWS account ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:150
+msgid "The AMI ID of the generated image is stored in ``AMI_ID``. You can also see a list of the AMIs currently in your AWS account by running ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:156
+msgid "Cluster configuration for PySPH"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:158
+msgid "Modify your StarCluster configuration file with the following information. Launching a cluster with the following configuration will start 2 t2.micro instances, install the latest version of PySPH in each and keep track of the nodes loaded in ``/home/pysph/PYSPH_HOSTS``::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:175
+msgid "Also, copy ``sc_pysph.py`` from the ``starcluster`` directory to ``~/.starcluster/plugins/``"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:179
+msgid "Running PySPH scripts on a cluster"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:181
+msgid "You can start the cluster configured previously by running ::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:185
+msgid "Assuming your PySPH file ``cube.py`` is in the local home directory, you can first transfer this file to the cluster::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:190
+msgid "Then run the PySPH code as::"
+msgstr ""
+
+#: ../../pysph/docs/source/starcluster/overview.rst:194
+msgid "Finally, you can get the output generated by PySPH back by running::"
+msgstr ""
