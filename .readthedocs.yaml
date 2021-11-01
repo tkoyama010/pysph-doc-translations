@@ -1,0 +1,9 @@
+version: 2
+
+submodules:
+  include:
+    - pysph
+  recursive: true
+
+conda:
+  environment: environment.yml
