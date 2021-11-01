@@ -1,4 +1,3 @@
-
 name: pysph
 dependencies:
   - cython
