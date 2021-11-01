@@ -32,20 +32,25 @@ msgid ""
 "still obtain excellent performance.  PySPH can make use of multiple cores "
 "via OpenMP or be run seamlessly in parallel using MPI."
 msgstr ""
+"PySPHは、Smoothed Particle Hydrodynamics (SPH)シミュレーションのためのオープンソースフレームワークです。 "
+"ユーザーは純粋な Python_ でSPH定式化を実装しても、優れた性能を得ることができます。 "
+"PySPHは、OpenMPによるマルチコアの利用や、MPIによるシームレスな並列実行が可能です。"
 
 #: ../../pysph/docs/source/index.rst:14
 msgid "Here are some videos of simulations made with PySPH."
-msgstr ""
+msgstr "PySPHを使ったシミュレーションの動画をご紹介します。"
 
 #: ../../pysph/docs/source/index.rst:26
 msgid ""
 "PySPH is hosted on `github <http://github.com/pypr/pysph>`_.  Please see the"
 " `github <http://github.com/pypr/pysph>`_ site for development details."
 msgstr ""
+"PySPH は `github <http://github.com/pypr/pysph>`_ にホストされています。 開発の詳細については、 "
+"`github <http://github.com/pypr/pysph>`_ のサイトをご覧ください。"
 
 #: ../../pysph/docs/source/index.rst:35
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 #: ../../pysph/docs/source/index.rst:44
 msgid "Installation and getting started"
