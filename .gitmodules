@@ -1,0 +1,3 @@
+[submodule "pysph"]
+	path = pysph
+	url = https://github.com/pypr/pysph.git
