@@ -1,4 +1,3 @@
-Cython
 -e ./pysph
 Sphinx
 sphinx-intl[transifex]>=0.9.11
