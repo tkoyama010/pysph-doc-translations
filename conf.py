@@ -21,9 +21,9 @@ basedir = os.path.join(
 
 execfile_(os.path.join(basedir, "conf.py"), globals())
 
-locale_dirs = [os.path.join(basedir, "locale/")]
+locale_dirs = [os.path.join(basedir, "../../../locale/")]
 
 
 def setup(app):
-    app.srcdir = os.path.join(basedir, "pysph/docs/source/")
+    app.srcdir = basedir
     app.confdir = app.srcdir
