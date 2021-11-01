@@ -41,6 +41,7 @@ jobs:
         source /home/runner/work/.venv/bin/activate
         pip install -U pip setuptools wheel
         pip install -r ./requirements.txt
+        pip install -r pysph/requirements.txt
         deactivate
     - name: update
       env:
