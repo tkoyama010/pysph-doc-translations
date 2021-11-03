@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../pysph/docs/source/overview.rst:3
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 #: ../../pysph/docs/source/overview.rst:6
 msgid ""
@@ -44,16 +44,21 @@ msgid ""
 "(multi-CPU) using mpi4py_ and Zoltan_. If you wish to use the parallel "
 "capabilities you will need to have these installed."
 msgstr ""
+"PySPHは、ユーザーが純粋なPythonでSPHシミュレーション全体を指定できるように実装されています。この高レベルのPythonコードから高性能のコードが生成され、その場でコンパイルされて実行されます。PySPHはOpenMPを使用して、マルチコアCPUを効果的に利用することができます。PySPHは、OpenCLと連携し、GPGPUを利用することができます。また、PySPHはオプションで"
+" mpi4py_ や Zoltan_ "
+"を使った自動並列化(マルチCPU化)を行うことができます。並列機能を使いたい場合は、これらをインストールする必要があります。"
 
 #: ../../pysph/docs/source/overview.rst:18
 msgid "Here are videos of simulations made with PySPH."
-msgstr ""
+msgstr "PySPHを使ったシミュレーションの動画をご紹介します。"
 
 #: ../../pysph/docs/source/overview.rst:30
 msgid ""
 "PySPH is hosted on `github <https://github.com/pypr/pysph>`_. Please see the"
 " site for development details."
 msgstr ""
+"PySPH は `github <https://github.com/pypr/pysph>`_ にホストされています。 "
+"開発の詳細については、サイトをご覧ください。"
 
 #: ../../pysph/docs/source/overview.rst:42
 msgid "Features"

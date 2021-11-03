@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PySPH package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-01 15:35+0000\n"
 "PO-Revision-Date: 2021-11-01 15:22+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2021\n"
 "Language-Team: Japanese (https://www.transifex.com/getfem-doc/teams/127008/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +38,7 @@ msgstr ""
 msgid ""
 "There are many command line options that this example provides, check them "
 "out with::"
-msgstr ""
+msgstr "この例では多くのコマンドラインオプションが用意されているので、次のようにチェックしてみてください。"
 
 #: ../../pysph/docs/source/examples/flow_past_cylinder.rst:16
 msgid ""
@@ -241,7 +245,7 @@ msgstr ""
 
 #: ../../pysph/docs/source/examples/index.rst:4
 msgid "Gallery of PySPH examples"
-msgstr ""
+msgstr "PySPHの事例ギャラリー"
 
 #: ../../pysph/docs/source/examples/index.rst:6
 msgid ""
@@ -249,19 +253,20 @@ msgid ""
 "illustrate various features of PySPH and show one may use PySPH to solve a "
 "variety of problems."
 msgstr ""
+"以下では、いくつかのPySPHの例を紹介します。これらは、PySPHの様々な機能を説明し、様々な問題を解決するためにPySPHを使用することを示しています。"
 
 #: ../../pysph/docs/source/examples/index.rst:18
 msgid ":ref:`taylor_green`: the Taylor-Green Vortex problem in 2D."
-msgstr ""
+msgstr ":ref:`taylor_green`: 2次元のTaylor-Green渦巻き問題。"
 
 #: ../../pysph/docs/source/examples/index.rst:19
 msgid ""
 ":ref:`sphere_in_vessel`: A sphere floating in a hydrostatic tank example."
-msgstr ""
+msgstr ":ref:`sphere_in_vessel`: 静水タンクの中に浮かぶ球体の例。"
 
 #: ../../pysph/docs/source/examples/index.rst:20
 msgid ":ref:`flow_past_cylinder`: Flow past a circular cylinder in 2D."
-msgstr ""
+msgstr ":ref:`flow_past_cylinder`: 2Dの円柱を通過する流れ。"
 
 #: ../../pysph/docs/source/examples/sphere_in_vessel.rst:4
 msgid "A rigid sphere floating in an hydrostatic tank"
@@ -278,6 +283,9 @@ msgid ""
 "The example source can be seen at `sphere_in_vessel.py "
 "<https://github.com/pypr/pysph/tree/master/pysph/examples/rigid_body/sphere_in_vessel_akinci.py>`_."
 msgstr ""
+"サンプルソースは `sphere_in_vessel.py "
+"<https://github.com/pypr/pysph/tree/master/pysph/examples/rigid_body/sphere_in_vessel_akinci.py>`_"
+" で見ることができます。"
 
 #: ../../pysph/docs/source/examples/sphere_in_vessel.rst:22
 msgid "Setting up a simulation involving rigid bodies and fluid"
@@ -387,13 +395,13 @@ msgstr ""
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:4
 msgid "The Taylor-Green Vortex"
-msgstr ""
+msgstr "Taylor-Green渦巻き"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:6
 msgid ""
 "This example solves the classic Taylor-Green Vortex problem in two-"
 "dimensions. To run it one may do::"
-msgstr ""
+msgstr "この例題は、古典的なTaylor-Green Vortex問題を2次元で解きます。これを実行するには次のようにします。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:15
 msgid ""
@@ -403,43 +411,44 @@ msgstr ""
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:19
 msgid "This example demonstrates several useful features:"
-msgstr ""
+msgstr "この例では、いくつかの便利な機能が紹介されています。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:21
 msgid "user defined command line arguments and how they can be used."
-msgstr ""
+msgstr "ユーザー定義のコマンドライン引数とその使用方法。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:22
 msgid "running the problem with multiple schemes."
-msgstr ""
+msgstr "複数のスキームで問題を解決します。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:23
 msgid "periodicity in both dimensions."
-msgstr ""
+msgstr "両方の次元で周期性があります。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:24
 msgid "post processing of generated data."
-msgstr ""
+msgstr "生成されたデータの後処理を行います。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:25
 msgid ""
 "using the :py:class:`pysph.tools.sph_evaluator.SPHEvaluator` class for post-"
 "processing."
 msgstr ""
+"後処理には、 :py:class:`pysph.tools.sph_evaluator.SPHEvaluator` クラスを使用しています。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:27
 msgid "We discuss each of these below."
-msgstr ""
+msgstr "以下、それぞれについて説明します。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:30
 msgid "User command line arguments"
-msgstr ""
+msgstr "ユーザーのコマンドライン引数"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:32
 msgid ""
 "The user defined command line arguments are easy to add. The following code "
 "snippet demonstrates how one adds this."
-msgstr ""
+msgstr "ユーザー定義のコマンドライン引数は簡単に追加できます。次のコードは、その方法を示したものです。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:50
 msgid ""
@@ -449,6 +458,10 @@ msgid ""
 "attribute and can be accessed as ``self.options`` from the application's "
 "methods.  The ``consume_user_options`` method highlights this."
 msgstr ""
+"このコードは、 `argparse API <https://docs.python.org/3/library/argparse.html>`_ "
+"を使用してオプションを追加する、わかりやすいPythonコードです。オプションはアプリケーションの ``options`` "
+"属性に格納され、アプリケーションのメソッドから ``self.options`` としてアクセスできることに注意してください "
+"``consume_user_options`` メソッドはこの点を強調しています。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:65
 msgid ""
@@ -460,14 +473,19 @@ msgid ""
 " are parsed and the following methods are called (this means that at this "
 "point, the application has a valid ``self.options``):"
 msgstr ""
+"このメソッドは、コマンドライン引数が渡された後に呼び出されます。アプリケーションの様々なメソッドが呼び出される順序について記憶を新たにするには、 "
+":py:class:`pysph.solver.application.Application`  "
+"クラスのドキュメントを参照してください。これを見ると、アプリケーションが ``run`` "
+"メソッドを使って実行されると、コマンドライン引数が解析され、次のメソッドが呼び出されていることがわかります（この時点で、アプリケーションは有効な "
+"``self.options`` を持っていることを意味します）。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:73
 msgid "``consume_user_options()``"
-msgstr ""
+msgstr "``consume_user_options()``"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:74
 msgid "``configure_scheme()``"
-msgstr ""
+msgstr "``configure_scheme()``"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:76
 msgid ""
@@ -476,6 +494,8 @@ msgid ""
 "resolution via ``--nx`` and ``--hdx``.  The code for the configuration looks"
 " like:"
 msgstr ""
+"この例では、レイノルズ数を変更して粘度を変えたり、 ``--nx`` や ``--hdx`` で解像度を変えたりできるので、 "
+"``configure_scheme`` は重要です。 設定のためのコードは以下のようになります。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:94
 msgid ""
@@ -483,10 +503,12 @@ msgid ""
 "``scheme.configure`` method. Furthermore, the method also calls the scheme's"
 " ``configure_solver`` method."
 msgstr ""
+"``self.options.scheme`` の使用と、 ``scheme.configure`` "
+"メソッドの使用法に注目してください。さらに、このメソッドはスキームの ``configure_solver`` メソッドも呼び出します。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:100
 msgid "Using multiple schemes"
-msgstr ""
+msgstr "複数のスキームの使用"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:102
 msgid ""
@@ -501,6 +523,8 @@ msgid ""
 "you. In this example, the ``create_particles`` method has the following "
 "code:"
 msgstr ""
+"複数のスキームを使用する場合、スキームごとに異なるパーティクル・プロパティが必要であることを覚えておくことが重要です。スキームはこれらの追加プロパティを設定してくれます。この例では、"
+" ``create_particles`` メソッドは以下のようなコードになっています。"
 
 #: ../../pysph/docs/source/examples/taylor_green.rst:135
 msgid ""

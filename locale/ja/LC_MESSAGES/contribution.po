@@ -39,20 +39,22 @@ msgid ""
 "further instructions assuming that the repository is cloned in home "
 "directory. Change to the ``docs`` directory and run ``make html``. ::"
 msgstr ""
+"必ず ``pysph`` の環境で作業してください。リポジトリがホームディレクトリにクローンされていると仮定して、以降の説明を進めていきます。 "
+"``docs`` ディレクトリに移動して、 ``make html`` を実行してください。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:21
 msgid "Possible error one might get is::"
-msgstr ""
+msgstr "想定されるエラーは以下の通りです。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:25
 msgid ""
 "Which means you don't a have `sphinx-build` in your system. To install "
 "across the system do::"
-msgstr ""
+msgstr "あなたのシステムには `sphinx-build` がないということです。システム全体にインストールするには以下のようにします。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:31
 msgid "or to install in an environment locally do::"
-msgstr ""
+msgstr "またはローカルで行う環境にインストールすることができます。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:35
 msgid ""
@@ -60,10 +62,12 @@ msgid ""
 "``~/pysph/docs/build/html`` directory. Open ```index.html`` file by running "
 "::"
 msgstr ""
+"もう一度 ``make html`` を実行してください。ドキュメントはローカルの ``~/pysph/docs/build/html`` "
+"ディレクトリにビルドされます。次のコマンドを実行して、 ``index.html`` ファイルを開きます。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:44
 msgid "How to add the documentation"
-msgstr ""
+msgstr "ドキュメントの追加方法"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:46
 msgid ""
@@ -72,6 +76,9 @@ msgid ""
 "``~/pysph/docs/source/examples`` directory to add documentation to examples."
 " Choose an example to write documentation for, ::"
 msgstr ""
+"まず始めに、 ``~/pysph/pysph/examples`` "
+"フォルダにあるサンプルの一つにドキュメントを追加することができます。例題にドキュメントを追加するために、専用の "
+"``~/pysph/docs/source/examples`` ディレクトリが用意されています。ドキュメントを書く例を選んでください、 ::"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:54
 msgid ""
@@ -79,13 +86,15 @@ msgid ""
 "``index.rst`` file in the examples directory should know about our newly "
 "created file, add a reference next to the last written example.::"
 msgstr ""
+"ここでは、すべてのドキュメントを ``rst`` ファイル形式で記述します。examples ディレクトリにある ``index.rst`` "
+"ファイルは、新しく作成されたファイルのことを知っているはずで、最後に書かれた例の横に参照を追加します。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:64
 msgid ""
 "and at the top of the example file add the reference, for example in "
 "``your_example_file.rst``, you should add,::"
-msgstr ""
+msgstr "例えば、 ``your_example_file.rst`` では、次の行を追加する必要があります。"
 
 #: ../../pysph/docs/source/contribution/how_to_write_docs.rst:70
 msgid "That's it, add the documentation and send a pull request."
-msgstr ""
+msgstr "以上で、ドキュメントを追加し、プルリクエストを送信することができます。"
