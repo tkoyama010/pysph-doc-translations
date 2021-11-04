@@ -34,6 +34,9 @@ msgid ""
 " Anaconda_ or other environments like WinPython_. The following instructions"
 " should help you get started."
 msgstr ""
+"PySPHをインストールするには、必要な依存関係がインストールされたPython環境が必要です。現在、PySPHはPython "
+"3.xでテストされています。Pythonが初めての方は EDM_ か Anaconda_ をお勧めします。PySPHは miniconda_, "
+"Anaconda_ や WinPython_ のような環境でも動作します。以下の説明は、あなたが始めるのに役立つでしょう。"
 
 #: ../../pysph/docs/source/installation.rst:14
 msgid ""
@@ -43,16 +46,20 @@ msgid ""
 "depending on your operating system. If you need to use MPI please do go "
 "through :ref:`install-with-mpi` first though."
 msgstr ""
+"ここには多くの情報が含まれていますので、 :ref:`quick-install` や :ref:`dependencies` "
+"のセクションに目を通した後、お使いのオペレーティングシステムに応じて、以下の \"Installing the dependencies on "
+"xxx\" セクションのいずれかに直接ジャンプすることをお勧めします。MPIを使用する必要がある場合には、まず :ref:`install-with-"
+"mpi` を実行してください。"
 
 #: ../../pysph/docs/source/installation.rst:20
 msgid ""
 "Depending on your chosen Python distribution, simply follow the instructions"
 " and links referred therein."
-msgstr ""
+msgstr "あなたが選んだPythonのディストリビューションに応じて、そこに記載されている指示やリンクに従ってください。"
 
 #: ../../pysph/docs/source/installation.rst:37
 msgid "Quick installation"
-msgstr ""
+msgstr "クイックインストール"
 
 #: ../../pysph/docs/source/installation.rst:39
 msgid ""
@@ -61,6 +68,8 @@ msgid ""
 "interested in running PySPH on multiple CPUs (using MPI), then installing "
 "PySPH is simple. Simply running pip_ like so::"
 msgstr ""
+"もし、あなたがPythonパッケージのインストールにある程度慣れていて、すでにC++コンパイラがマシンにセットアップされていて、(MPIを使って)複数のCPUでPySPHを実行することにすぐに興味がなければ、PySPHのインストールは簡単です。"
+" pip_ を次のように実行するだけです。"
 
 #: ../../pysph/docs/source/installation.rst:46
 msgid ""
@@ -71,18 +80,24 @@ msgid ""
 ":`downloading-pysph`. If you need MPI support you should first read :ref"
 ":`install-with-mpi`."
 msgstr ""
+"を実行すればよいのです。必要に応じて virtualenv_ "
+"で行うこともできます。重要なサンプルはソースと一緒にパッケージされているので、すぐに実行できるはずです。ソースをダウンロードして調べたい場合は，tarball/ZIPを使うか，gitからダウンロードすることができます。"
+" :ref:`downloading-pysph` を参照してください。MPIのサポートが必要な場合は、まず :ref:`install-with-"
+"mpi` を読んでください。"
 
 #: ../../pysph/docs/source/installation.rst:53
 msgid ""
 "The above will install the latest released version of PySPH, you can install"
 " the development version using::"
-msgstr ""
+msgstr "上記は最新のリリースバージョンのPySPHをインストールしますが、開発バージョンをインストールするには次のようにします。"
 
 #: ../../pysph/docs/source/installation.rst:58
 msgid ""
 "If you wish to track the development of the package, clone the repository "
 "(as described in :ref:`downloading-pysph` and do the following::"
 msgstr ""
+"パッケージの開発状況を把握したい場合は、（ :ref:`downloading-pysph` "
+"で説明しているようにリポジトリをクローンして、次のようにします。"
 
 #: ../../pysph/docs/source/installation.rst:64
 msgid ""
