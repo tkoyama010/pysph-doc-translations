@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../pysph/docs/source/design/equations.rst:5
 msgid "Writing equations"
-msgstr ""
+msgstr "数式を書く"
 
 #: ../../pysph/docs/source/design/equations.rst:7
 msgid ""
@@ -31,31 +31,33 @@ msgid ""
 "equations. We assume that you have already read the section "
 ":ref:`design_overview`. Some information is repeated from there as well."
 msgstr ""
+"このドキュメントでは、数式の書き方について必要な情報をまとめています。すでに :ref:`design_overview` "
+"のセクションをお読みいただいていると思います。いくつかの情報はそこから繰り返されています。"
 
 #: ../../pysph/docs/source/design/equations.rst:11
 msgid ""
 "The PySPH equations are written in a very restricted way. The reason for "
 "this is that if you do follow the suggestions and the conventions below you "
 "will benefit from:"
-msgstr ""
+msgstr "PySPHの方程式は、非常に制限された方法で書かれています。その理由は、以下の提案と規約に従えば、恩恵を受けることができるからです。"
 
 #: ../../pysph/docs/source/design/equations.rst:15
 msgid "a high-performance serial implementation."
-msgstr ""
+msgstr "高性能なシリアル実装を実現しています。"
 
 #: ../../pysph/docs/source/design/equations.rst:16
 msgid "support for using your equations with OpenMP."
-msgstr ""
+msgstr "OpenMPで方程式を使用するためのサポート。"
 
 #: ../../pysph/docs/source/design/equations.rst:17
 msgid "support for running on a GPU."
-msgstr ""
+msgstr "GPUでの動作をサポートしています。"
 
 #: ../../pysph/docs/source/design/equations.rst:19
 msgid ""
 "These are the main motivations for the severe restrictions we impose when "
 "you write your equations."
-msgstr ""
+msgstr "これが、方程式を書くときに厳しい制限を課す主な理由です。"
 
 #: ../../pysph/docs/source/design/equations.rst:23
 #: ../../pysph/docs/source/design/iom.rst:18
@@ -66,7 +68,7 @@ msgstr "概要"
 msgid ""
 "PySPH takes the equations you write and converts them on the fly to a high-"
 "performance implementation suitable for the particular backend you request."
-msgstr ""
+msgstr "PySPHは、あなたが書いた方程式を、あなたが要求する特定のバックエンドに適した高性能な実装にその場で変換します。"
 
 #: ../../pysph/docs/source/design/equations.rst:31
 msgid ""
@@ -74,6 +76,8 @@ msgid ""
 " used when the high-performance code is generated. Let us look at the "
 "different methods of a typical :py:class:`Equation` subclass::"
 msgstr ""
+"高性能なコードが生成される際に方程式がどのように使用されるのか、全体的な構造を理解することが重要です。典型的な :py:class:`Equation`"
+" サブクラスのさまざまなメソッドを見てみましょう::"
 
 #: ../../pysph/docs/source/design/equations.rst:72
 msgid ""
@@ -104,7 +108,7 @@ msgstr ""
 msgid ""
 "for each fluid particle, the ``initialize_pair`` method is called while "
 "having access to all the *fluid* arrays."
-msgstr ""
+msgstr "各流体粒子に対して，すべての *fluid* 配列にアクセスしながら ``initialize_pair`` メソッドが呼び出されます．"
 
 #: ../../pysph/docs/source/design/equations.rst:91
 msgid ""
@@ -333,6 +337,8 @@ msgid ""
 "``XIJ[0] = d_x[d_idx] - s_x[s_idx]``, ``XIJ[1] = d_y[d_idx] - s_y[s_idx]``, "
 "``XIJ[2] = d_z[d_idx] - s_z[s_idx]``"
 msgstr ""
+"``XIJ[0] = d_x[d_idx] - s_x[s_idx]``, ``XIJ[1] = d_y[d_idx] - s_y[s_idx]``, "
+"``XIJ[2] = d_z[d_idx] - s_z[s_idx]``"
 
 #: ../../pysph/docs/source/design/equations.rst:289
 #: ../../pysph/docs/source/design/overview.rst:549
@@ -492,7 +498,7 @@ msgstr ""
 #: ../../pysph/docs/source/design/equations.rst:353
 #: ../../pysph/docs/source/design/overview.rst:601
 msgid "``M_PI_4``: value of pi / 4"
-msgstr ""
+msgstr "``M_PI_4``: pi /4の値"
 
 #: ../../pysph/docs/source/design/equations.rst:354
 #: ../../pysph/docs/source/design/overview.rst:602
@@ -1384,6 +1390,9 @@ msgid ""
 "the pressure is updated. Recall we had to do a similar seggregation for the "
 "`SPHCalc.compute` method in our hypothetical implementation:"
 msgstr ""
+"2つの **Group** オブジェクト（ :py:class:`pysph.sph.equation.Group` "
+"参照）を使用して、論理的に依存している評価の2つの部分を分離していることがわかります。加速度が計算される2つ目のグループは、圧力が更新される最初のグループの後に評価されなければなりません*。我々の仮想的な実装では，"
+" `SPHCalc.compute` メソッドに対して同様の分離を行わなければならなかったことを思い出してください．"
 
 #: ../../pysph/docs/source/design/overview.rst:410
 msgid ""
@@ -1391,6 +1400,8 @@ msgid ""
 "provided by the user. This flexibility also means it is quite easy to make "
 "subtle errors."
 msgstr ""
+"PySPHは、ユーザーから提供された **Equation** と **Groups** "
+"の順番を尊重します。このような柔軟性は、微妙なミスを犯しやすいことを意味します。"
 
 #: ../../pysph/docs/source/design/overview.rst:414
 msgid ""
@@ -1938,7 +1949,7 @@ msgstr ""
 
 #: ../../pysph/docs/source/design/working_with_particles.rst:32
 msgid "import numpy"
-msgstr ""
+msgstr "import numpy"
 
 #: ../../pysph/docs/source/design/working_with_particles.rst:34
 msgid "# Import the base module import pysph.base.api as base"
@@ -2044,7 +2055,7 @@ msgstr ""
 
 #: ../../pysph/docs/source/design/working_with_particles.rst:100
 msgid "FloatArray"
-msgstr ""
+msgstr "FloatArray"
 
 #: ../../pysph/docs/source/design/working_with_particles.rst:101
 msgid "DoubleArray"
