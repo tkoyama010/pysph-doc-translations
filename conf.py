@@ -12,6 +12,7 @@ This conf.py do:
 
 """
 import os
+
 from sphinx.util.pycompat import execfile_
 
 absdir = os.path.dirname(os.path.abspath(__file__))
