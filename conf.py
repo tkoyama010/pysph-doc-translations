@@ -12,9 +12,11 @@ This conf.py do:
 
 """
 import os
+
 from sphinx.util.pycompat import execfile_
 
-basedir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pysph/docs/source")
+absdir = os.path.dirname(os.path.abspath(__file__))
+basedir = os.path.join(absdir, "pysph/docs/source")
 execfile_(os.path.join(basedir, "conf.py"), globals())
 locale_dirs = [os.path.join(basedir, "../../../locale/")]
 
