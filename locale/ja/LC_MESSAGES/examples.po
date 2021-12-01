@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../pysph/docs/source/examples/flow_past_cylinder.rst:4
 msgid "Flow past a circular cylinder using open boundary conditions"
-msgstr ""
+msgstr "開放境界条件を用いた円柱を通過する流れ"
 
 #: ../../pysph/docs/source/examples/flow_past_cylinder.rst:6
 msgid ""
@@ -31,6 +31,7 @@ msgid ""
 " PySPH. The flow past a circular cylinder is an example which uses both "
 "inlet and outlet boundary conditions. To run it one may do::"
 msgstr ""
+"この例では、PySPHでのインレットとアウトレットの境界条件のAPIを示します。円柱を通過する流れの例では、入口と出口の両方の境界条件を使用しています。この例題を実行するには次のようにします。"
 
 #: ../../pysph/docs/source/examples/flow_past_cylinder.rst:12
 #: ../../pysph/docs/source/examples/sphere_in_vessel.rst:12
