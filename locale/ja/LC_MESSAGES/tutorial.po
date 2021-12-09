@@ -677,9 +677,9 @@ msgid ""
 "`plot` attribute of the "
 ":py:class:`pysph.tools.mayavi_viewer.ParticleArrayHelper` is a `Glyph` "
 "instance from Mayavi_. It is useful to use the `record feature "
-"<http://docs.enthought.com/mayavi/mayavi/mlab_changing_object_looks.html"
-"#changing-object-properties-interactively>`_ of Mayavi to learn more about "
-"how best to script the view."
+"<http://docs.enthought.com/mayavi/mayavi/mlab_changing_object_looks.html#changing-"
+"object-properties-interactively>`_ of Mayavi to learn more about how best to"
+" script the view."
 msgstr ""
 
 #: ../../pysph/docs/source/tutorial/circular_patch_simple.rst:397

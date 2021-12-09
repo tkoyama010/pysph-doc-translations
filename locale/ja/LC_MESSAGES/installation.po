@@ -76,9 +76,9 @@ msgid ""
 "should do the trick. You may do this in a virtualenv_ if you chose to. The "
 "important examples are packaged with the sources, you should be able to run "
 "those immediately. If you wish to download the sources and explore them, you"
-" can download the sources either using the tarball/ZIP or from git, see :ref"
-":`downloading-pysph`. If you need MPI support you should first read :ref"
-":`install-with-mpi`."
+" can download the sources either using the tarball/ZIP or from git, see "
+":ref:`downloading-pysph`. If you need MPI support you should first read "
+":ref:`install-with-mpi`."
 msgstr ""
 "を実行すればよいのです。必要に応じて virtualenv_ "
 "で行うこともできます。重要なサンプルはソースと一緒にパッケージされているので、すぐに実行できるはずです。ソースをダウンロードして調べたい場合は，tarball/ZIPを使うか，gitからダウンロードすることができます。"
@@ -325,8 +325,8 @@ msgid ""
 "mpi4py_ and Zoltan_: If you want to use PySPH in parallel, you will need "
 "mpi4py_ and the Zoltan_ data management library along with the PyZoltan_ "
 "package. PySPH will work in serial without mpi4py_ or Zoltan_. Simple build "
-"instructions for Zoltan are included below but please do go through the :ref"
-":`install-with-mpi` section to get an overview."
+"instructions for Zoltan are included below but please do go through the "
+":ref:`install-with-mpi` section to get an overview."
 msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:243
@@ -407,10 +407,10 @@ msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:310
 msgid ""
-"If you are using EDM_ or Anaconda_ the instructions in the section :ref"
-":`installing-deps-osx` will be useful as the instructions are the same. The "
-"following are for the case where you wish to use the native Python packages "
-"distributed with the Linux distribution you are using."
+"If you are using EDM_ or Anaconda_ the instructions in the section "
+":ref:`installing-deps-osx` will be useful as the instructions are the same. "
+"The following are for the case where you wish to use the native Python "
+"packages distributed with the Linux distribution you are using."
 msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:315
@@ -470,8 +470,8 @@ msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:365
 msgid ""
-"You should be set now and should skip to :ref:`downloading-pysph` and :ref"
-":`building-pysph`."
+"You should be set now and should skip to :ref:`downloading-pysph` and "
+":ref:`building-pysph`."
 msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:368
@@ -499,8 +499,8 @@ msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:401
 msgid ""
-"You may also set these options in the configuration file described in :ref"
-":`config-file`."
+"You may also set these options in the configuration file described in "
+":ref:`config-file`."
 msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:404
@@ -703,9 +703,9 @@ msgstr ""
 #: ../../pysph/docs/source/installation.rst:583
 msgid ""
 "You can then follow the instructions on how to build/install Zoltan and "
-"PyZoltan given above. You should be set now and should move to :ref"
-":`building-pysph`. Just make sure you have set the ``ZOLTAN`` environment "
-"variable so PySPH knows where to find it."
+"PyZoltan given above. You should be set now and should move to "
+":ref:`building-pysph`. Just make sure you have set the ``ZOLTAN`` "
+"environment variable so PySPH knows where to find it."
 msgstr ""
 
 #: ../../pysph/docs/source/installation.rst:593
@@ -1313,6 +1313,7 @@ msgstr ""
 msgid ""
 "If you are using EDM_ or Anaconda_, things should work most of the time. "
 "However, there may be problems and in this case please report the issues to "
-"the `pysph-users mailing list <https://groups.google.com/forum/#!forum"
-"/pysph-users>`_ or send us `email <mailto:pysph-users@googlegroups.com>`_."
+"the `pysph-users mailing list "
+"<https://groups.google.com/forum/#!forum/pysph-users>`_ or send us `email "
+"<mailto:pysph-users@googlegroups.com>`_."
 msgstr ""
