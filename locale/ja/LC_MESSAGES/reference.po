@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PySPH 1.0b1.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-01 15:35+0000\n"
+"POT-Creation-Date: 2022-01-17 01:20+0000\n"
 "PO-Revision-Date: 2021-11-01 15:22+0000\n"
 "Language-Team: Japanese (https://www.transifex.com/getfem-doc/teams/127008/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -7180,12 +7180,9 @@ msgstr ""
 msgid "Spatial index for a cell"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.get_centroid:0 ../docstring of
-#: pysph.base.particle_array.ParticleArray.get:0
+#: ../docstring of pysph.base.nnps_base.get_centroid:0
 #: ../../pysph/pysph/base/utils.pydocstring of
 #: pysph.base.utils.get_particles_info:0
-#: ../../pysph/pysph/tools/interpolator.pydocstring of
-#: pysph.tools.interpolator.Interpolator.interpolate:0
 #: ../../pysph/pysph/tools/geometry.pydocstring of
 #: pysph.tools.geometry.get_packed_periodic_packed_particles:0
 #: ../../pysph/pysph/tools/geometry.pydocstring of
@@ -7194,8 +7191,6 @@ msgstr ""
 #: pysph.tools.geometry.get_packed_2d_particles_from_surface_file:0
 #: ../../pysph/pysph/tools/geometry.pydocstring of
 #: pysph.tools.geometry.get_packed_3d_particles_from_surface_file:0
-#: ../../pysph/pysph/tools/geometry.pydocstring of
-#: pysph.tools.geometry.create_fluid_around_packing:0
 msgid "Returns"
 msgstr ""
 
