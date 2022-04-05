@@ -1,4 +1,4 @@
 -e ./pysph
 Sphinx==4.5.0
 sphinx-intl[transifex]>=0.9.11
-sphinx_rtd_theme==0.5.2
+sphinx_rtd_theme==1.0.0
