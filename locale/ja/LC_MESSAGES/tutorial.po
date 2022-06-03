@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PySPH 1.0b1.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-01 15:35+0000\n"
+"POT-Creation-Date: 2022-06-03 21:07+0000\n"
 "PO-Revision-Date: 2021-11-01 15:22+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2021\n"
 "Language-Team: Japanese (https://www.transifex.com/getfem-doc/teams/127008/ja/)\n"
@@ -629,7 +629,7 @@ msgstr ""
 msgid "If you have Mayavi_ installed this should show a UI that looks like:"
 msgstr ""
 
-#: ../../pysph/docs/source/tutorial/circular_patch_simple.rstNone
+#: ../../pysph/docs/source/tutorial/circular_patch_simple.rst-1
 msgid "PySPH viewer"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PySPH 1.0b1.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 01:20+0000\n"
+"POT-Creation-Date: 2022-06-03 21:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,10 +177,26 @@ msgstr ""
 msgid "Constructor"
 msgstr ""
 
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_gasd:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_iisph:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_rigid_body:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_swe:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_fluid:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_solid:0
+#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_wcsph:0
 #: ../../pysph/pysph/solver/application.py:docstring of pysph.solver.application.Application:0
 #: ../../pysph/pysph/solver/application.py:docstring of pysph.solver.application.Application.run:0
 #: ../../pysph/pysph/solver/application.py:docstring of pysph.solver.application.Application.setup:0
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation:0
+#: ../../pysph/pysph/solver/output.py:docstring of pysph.solver.output.dump:0
+#: ../../pysph/pysph/solver/output.py:docstring of pysph.solver.output.load:0
+#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver:0
+#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.load_output:0
+#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.setup_solver:0
+#: ../../pysph/pysph/solver/tools.py:docstring of pysph.solver.tools.DensityCorrection:0
+#: ../../pysph/pysph/solver/tools.py:docstring of pysph.solver.tools.SimpleRemesher:0
+#: ../../pysph/pysph/solver/utils.py:docstring of pysph.solver.utils.get_files:0
+#: ../../pysph/pysph/solver/utils.py:docstring of pysph.solver.utils.load_and_concatenate:0
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.BodyForce:0
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.ContinuityEquation:0
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.IsothermalEOS:0
@@ -190,85 +206,25 @@ msgstr ""
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient3D:0
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.XSPHCorrection:0
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.XSPHCorrectionForLeapFrog:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPH:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPHPreStep:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquation:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.PressureGradientUsingNumberDensity:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOS:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:0
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.UpdateSmoothingLengthFerrari:0
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.ClearyArtificialViscosity:0
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosity:0
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:0
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.MonaghanSignalViscosityFluids:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuityEquation:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuitySolid:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialStress:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialViscosity:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationPressureGradient:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationViscosity:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SetWallVelocity:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SolidWallNoSlipBC:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SolidWallPressureBC:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.StateEquation:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeFromMassDensity:0
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeSummation:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.ContinuityEquationGTVF:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.DeviatoricStressRate:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStress:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStressSolid:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationViscosity:0
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.VelocityGradient:0
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:0
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder3D:0
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:0
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrection:0
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrectionPreStep:0
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.KernelCorrection:0
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedGradientCorrection:0
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPH:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHPreStep:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHUpdateGhostProps:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.EnergyEquation:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.NumberDensity:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SpeedOfSound:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.StateEquation:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:0
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.VelocityGradient:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationViscosity:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:0
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.Predict:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.CopyNormalsandDistances:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.IOEvaluate:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletBase:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletInfo:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.add_io_properties:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.create_ghost:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.get_equations:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.get_inlet_outlet:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.get_stepper:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.setup_iom:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.update_dx:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.OutletBase:0
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.UpdateNormalsAndDisplacements:0
 #: ../../pysph/pysph/sph/boundary_equations.py:docstring of pysph.sph.boundary_equations.MonaghanBoundaryForce:0
 #: ../../pysph/pysph/sph/boundary_equations.py:docstring of pysph.sph.boundary_equations.MonaghanKajtarBoundaryForce:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.EnergyEquationWithStress:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.IsothermalEOS:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MonaghanArtificialStress:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MonaghanArtificialStress.loop:0
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:0
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.MieGruneisenEOS:0
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.StiffenedGasEOS:0
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.VonMisesPlasticity2D:0
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation:0
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Group:0
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.MultiStageEquations:0
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEAccelerations:0
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEUpdateGhostProps:0
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.IdealGasEOS:0
@@ -278,29 +234,6 @@ msgstr ""
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ScaleSmoothingLength:0
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensityADKE:0
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.UpdateSmoothingLengthFromVolume:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiColorGradient:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiReproducingDivergence:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.CSFSurfaceTensionForce:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.CSFSurfaceTensionForceAdami:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ColorGradientAdami:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ColorGradientUsingNumberDensity:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ConstructStressMatrix:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.InterfaceCurvatureFromDensity:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.InterfaceCurvatureFromNumberDensity:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationPressureGradientAdami:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationPressureGradientMorris:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationViscosityAdami:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationViscosityMorris:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MorrisColorGradient:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SY11ColorGradient:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SY11DiracDelta:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ShadlooViscosity:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ShadlooYildizSurfaceTensionForce:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SmoothedColor:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SolidWallPressureBCnoDensity:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SummationDensitySourceMass:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SurfaceForceAdami:0
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.get_surface_tension_equations:0
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.AdvectionAcceleration:0
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAII:0
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAIIBoundary:0
@@ -324,6 +257,8 @@ msgstr ""
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostProps:0
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAcceleration:0
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAccelerationBoundary:0
+#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.Advect:0
+#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.MixingVelocityUpdate:0
 #: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.AkinciRigidFluidCoupling:0
 #: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.BodyForce:0
 #: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.LiuFluidForce:0
@@ -334,47 +269,6 @@ msgstr ""
 #: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityBoundary:0
 #: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityRigidBody:0
 #: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.ViscosityRigidBody:0
-#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.Advect:0
-#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.MixingVelocityUpdate:0
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Group:0
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.MultiStageEquations:0
-#: ../docstring of pysph.base.nnps_base.Cell:0
-#: ../docstring of pysph.base.nnps_base.Cell.get_bounding_box:0
-#: ../docstring of pysph.base.nnps_base.Cell.get_centroid:0
-#: ../docstring of pysph.base.nnps_base.DomainManager:0
-#: ../docstring of pysph.base.nnps_base.NNPSBase:0
-#: ../docstring of pysph.base.nnps_base.NNPSBase.get_nearest_particles_no_cache:0
-#: ../docstring of pysph.base.nnps_base.NNPSBase.set_context:0
-#: ../docstring of pysph.base.nnps_base.get_centroid:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.set_context:0
-#: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:0
-#: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:0
-#: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS.get_nearest_particles_no_cache:0
-#: ../docstring of pysph.base.spatial_hash_nnps.ExtendedSpatialHashNNPS.set_context:0
-#: ../docstring of pysph.base.spatial_hash_nnps.SpatialHashNNPS.set_context:0
-#: ../docstring of pysph.base.particle_array.ParticleArray:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.add_constant:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.add_output_arrays:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.add_particles:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.add_property:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.copy_over_properties:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.copy_properties:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.extract_particles:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.get:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.get_property_arrays:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.remove_particles:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.remove_tagged_particles:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.set:0
-#: ../docstring of pysph.base.particle_array.ParticleArray.set_output_arrays:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_gasd:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_iisph:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_rigid_body:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_swe:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_fluid:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_solid:0
-#: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_wcsph:0
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme:0
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.configure_solver:0
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.setup_properties:0
@@ -399,29 +293,111 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:0
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.configure_solver:0
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.setup_properties:0
-#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver:0
-#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.load_output:0
-#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.setup_solver:0
-#: ../../pysph/pysph/solver/tools.py:docstring of pysph.solver.tools.DensityCorrection:0
-#: ../../pysph/pysph/solver/tools.py:docstring of pysph.solver.tools.SimpleRemesher:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.CopyNormalsandDistances:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.IOEvaluate:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletBase:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletInfo:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.add_io_properties:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.create_ghost:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.get_equations:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.get_inlet_outlet:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.get_stepper:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.setup_iom:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.InletOutletManager.update_dx:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.OutletBase:0
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.UpdateNormalsAndDisplacements:0
-#: ../../pysph/pysph/solver/output.py:docstring of pysph.solver.output.dump:0
-#: ../../pysph/pysph/solver/utils.py:docstring of pysph.solver.utils.get_files:0
-#: ../../pysph/pysph/solver/output.py:docstring of pysph.solver.output.load:0
-#: ../../pysph/pysph/solver/utils.py:docstring of pysph.solver.utils.load_and_concatenate:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.EnergyEquationWithStress:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.IsothermalEOS:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MonaghanArtificialStress:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MonaghanArtificialStress.loop:0
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:0
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.MieGruneisenEOS:0
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.StiffenedGasEOS:0
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.VonMisesPlasticity2D:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiColorGradient:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiReproducingDivergence:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.CSFSurfaceTensionForce:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.CSFSurfaceTensionForceAdami:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ColorGradientAdami:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ColorGradientUsingNumberDensity:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ConstructStressMatrix:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.InterfaceCurvatureFromDensity:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.InterfaceCurvatureFromNumberDensity:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationPressureGradientAdami:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationPressureGradientMorris:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationViscosityAdami:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MomentumEquationViscosityMorris:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.MorrisColorGradient:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SY11ColorGradient:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SY11DiracDelta:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ShadlooViscosity:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.ShadlooYildizSurfaceTensionForce:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SmoothedColor:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SolidWallPressureBCnoDensity:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SummationDensitySourceMass:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SurfaceForceAdami:0
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.get_surface_tension_equations:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPH:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPHPreStep:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquation:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.PressureGradientUsingNumberDensity:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOS:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:0
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.UpdateSmoothingLengthFerrari:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPH:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHPreStep:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHUpdateGhostProps:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.EnergyEquation:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.NumberDensity:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SpeedOfSound:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.StateEquation:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:0
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.VelocityGradient:0
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:0
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder3D:0
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.ContinuityEquationGTVF:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.DeviatoricStressRate:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStress:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStressSolid:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationViscosity:0
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.VelocityGradient:0
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrection:0
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrectionPreStep:0
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.KernelCorrection:0
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedGradientCorrection:0
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationViscosity:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:0
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.Predict:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuityEquation:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuitySolid:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialStress:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialViscosity:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationPressureGradient:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationViscosity:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SetWallVelocity:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SolidWallNoSlipBC:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SolidWallPressureBC:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.StateEquation:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeFromMassDensity:0
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeSummation:0
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.ClearyArtificialViscosity:0
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosity:0
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:0
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.MonaghanSignalViscosityFluids:0
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.create_fluid_around_packing:0
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:0
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:0
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:0
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:0
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.InterpolateFunction:0
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.InterpolateSPH:0
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.Interpolator:0
@@ -431,11 +407,35 @@ msgstr ""
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.SPHFirstOrderApproximation:0
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.SPHFirstOrderApproximationPreStep:0
 #: ../../pysph/pysph/tools/sph_evaluator.py:docstring of pysph.tools.sph_evaluator.SPHEvaluator:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.create_fluid_around_packing:0
+#: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:0
+#: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:0
+#: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS.get_nearest_particles_no_cache:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.set_context:0
+#: ../docstring of pysph.base.nnps_base.Cell:0
+#: ../docstring of pysph.base.nnps_base.Cell.get_bounding_box:0
+#: ../docstring of pysph.base.nnps_base.Cell.get_centroid:0
+#: ../docstring of pysph.base.nnps_base.DomainManager:0
+#: ../docstring of pysph.base.nnps_base.NNPSBase:0
+#: ../docstring of pysph.base.nnps_base.NNPSBase.get_nearest_particles_no_cache:0
+#: ../docstring of pysph.base.nnps_base.NNPSBase.set_context:0
+#: ../docstring of pysph.base.nnps_base.get_centroid:0
+#: ../docstring of pysph.base.particle_array.ParticleArray:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.add_constant:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.add_output_arrays:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.add_particles:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.add_property:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.copy_over_properties:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.copy_properties:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.extract_particles:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.get:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.get_property_arrays:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.remove_particles:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.remove_tagged_particles:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.set:0
+#: ../docstring of pysph.base.particle_array.ParticleArray.set_output_arrays:0
+#: ../docstring of pysph.base.spatial_hash_nnps.ExtendedSpatialHashNNPS.set_context:0
+#: ../docstring of pysph.base.spatial_hash_nnps.SpatialHashNNPS.set_context:0
 msgid "Parameters"
 msgstr ""
 
@@ -863,56 +863,14 @@ msgstr ""
 msgid "SPH equations"
 msgstr ""
 
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation:1
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.ContinuityEquation:7
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.SummationDensity:6
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient2D:14
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient3D:14
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPHPreStep:8
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.PressureGradientUsingNumberDensity:9
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.ClearyArtificialViscosity:22
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosity:1
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:10
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.MonaghanSignalViscosityFluids:1
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuityEquation:11
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuitySolid:7
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialStress:17
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SetWallVelocity:15
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:26
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeFromMassDensity:3
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeSummation:9
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.ContinuityEquationGTVF:9
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:14
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:33
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder3D:1
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:16
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrection:12
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrectionPreStep:1
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.KernelCorrection:9
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedGradientCorrection:7
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:26
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHPreStep:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:61
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHUpdateGhostProps:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.EnergyEquation:28
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:56
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.NumberDensity:11
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SpeedOfSound:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.StateEquation:10
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:20
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:17
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient:9
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationViscosity:5
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.Predict:11
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.CopyNormalsandDistances:3
 #: ../../pysph/pysph/sph/boundary_equations.py:docstring of pysph.sph.boundary_equations.MonaghanBoundaryForce:1
 #: ../../pysph/pysph/sph/boundary_equations.py:docstring of pysph.sph.boundary_equations.MonaghanKajtarBoundaryForce:1
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.EnergyEquationWithStress:1
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:18
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.IsothermalEOS:6
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:16
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.MieGruneisenEOS:1
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.StiffenedGasEOS:5
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.VonMisesPlasticity2D:1
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation:1
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEAccelerations:9
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEUpdateGhostProps:1
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.IdealGasEOS:1
@@ -922,6 +880,45 @@ msgstr ""
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ScaleSmoothingLength:1
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensityADKE:7
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.UpdateSmoothingLengthFromVolume:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.AdvectionAcceleration:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAII:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAIIBoundary:4
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDII:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIIBoundary:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIJPJ:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoAdvection:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoBoundary:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NormalizedSummationDensity:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NumberDensity:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForce:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForceBoundary:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolve:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolveBoundary:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensity:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensityBoundary:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostPressure:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostProps:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAcceleration:1
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAccelerationBoundary:4
+#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.Advect:1
+#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.MixingVelocityUpdate:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.AkinciRigidFluidCoupling:20
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.BodyForce:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.LiuFluidForce:20
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.NumberDensity:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.PressureRigidBody:6
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMoments:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMotion:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityBoundary:7
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityRigidBody:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.ViscosityRigidBody:6
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.EnergyEquationWithStress:1
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:18
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.IsothermalEOS:6
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:16
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.MieGruneisenEOS:1
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.StiffenedGasEOS:5
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.VonMisesPlasticity2D:1
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiColorGradient:16
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiReproducingDivergence:11
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.CSFSurfaceTensionForce:13
@@ -944,39 +941,42 @@ msgstr ""
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SolidWallPressureBCnoDensity:1
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SummationDensitySourceMass:1
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SurfaceForceAdami:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.AdvectionAcceleration:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAII:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAIIBoundary:4
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDII:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIIBoundary:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIJPJ:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoAdvection:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoBoundary:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NormalizedSummationDensity:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NumberDensity:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForce:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForceBoundary:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolve:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolveBoundary:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensity:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensityBoundary:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostPressure:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostProps:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAcceleration:1
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAccelerationBoundary:4
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.AkinciRigidFluidCoupling:20
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.BodyForce:1
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.LiuFluidForce:20
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.NumberDensity:1
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.PressureRigidBody:6
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMoments:1
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMotion:1
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityBoundary:7
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityRigidBody:1
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.ViscosityRigidBody:6
-#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.Advect:1
-#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.MixingVelocityUpdate:1
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.CopyNormalsandDistances:3
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPHPreStep:8
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.PressureGradientUsingNumberDensity:9
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHPreStep:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:61
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHUpdateGhostProps:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.EnergyEquation:28
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:56
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.NumberDensity:11
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SpeedOfSound:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.StateEquation:10
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:20
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:33
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder3D:1
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:16
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.ContinuityEquationGTVF:9
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:14
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrection:12
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrectionPreStep:1
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.KernelCorrection:9
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedGradientCorrection:7
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:26
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:17
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient:9
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationViscosity:5
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.Predict:11
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuityEquation:11
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuitySolid:7
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialStress:17
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SetWallVelocity:15
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:26
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeFromMassDensity:3
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeSummation:9
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.ClearyArtificialViscosity:22
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosity:1
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:10
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.MonaghanSignalViscosityFluids:1
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.InterpolateFunction:1
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.InterpolateSPH:1
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.SPHFirstOrderApproximation:15
@@ -984,56 +984,14 @@ msgstr ""
 msgid "name of the destination particle array"
 msgstr ""
 
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation:3
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.ContinuityEquation:9
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.SummationDensity:8
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient2D:16
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient3D:16
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPHPreStep:10
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.PressureGradientUsingNumberDensity:11
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.ClearyArtificialViscosity:24
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosity:3
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:12
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.MonaghanSignalViscosityFluids:3
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuityEquation:13
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuitySolid:9
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialStress:19
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SetWallVelocity:17
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:28
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeFromMassDensity:5
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeSummation:11
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.ContinuityEquationGTVF:11
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:16
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:35
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder3D:3
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:18
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrection:14
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrectionPreStep:3
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.KernelCorrection:11
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedGradientCorrection:9
-#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:28
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHPreStep:3
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:63
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHUpdateGhostProps:3
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.EnergyEquation:30
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:58
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.NumberDensity:13
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SpeedOfSound:3
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.StateEquation:12
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:22
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:19
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient:11
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationViscosity:7
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.Predict:13
+#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.CopyNormalsandDistances:5
 #: ../../pysph/pysph/sph/boundary_equations.py:docstring of pysph.sph.boundary_equations.MonaghanBoundaryForce:3
 #: ../../pysph/pysph/sph/boundary_equations.py:docstring of pysph.sph.boundary_equations.MonaghanKajtarBoundaryForce:3
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.EnergyEquationWithStress:3
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:20
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.IsothermalEOS:8
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:18
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.MieGruneisenEOS:3
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.StiffenedGasEOS:7
-#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.VonMisesPlasticity2D:3
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation:3
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEAccelerations:11
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEUpdateGhostProps:3
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.IdealGasEOS:3
@@ -1043,6 +1001,45 @@ msgstr ""
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ScaleSmoothingLength:3
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensityADKE:9
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.UpdateSmoothingLengthFromVolume:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.AdvectionAcceleration:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAII:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAIIBoundary:6
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDII:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIIBoundary:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIJPJ:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoAdvection:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoBoundary:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NormalizedSummationDensity:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NumberDensity:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForce:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForceBoundary:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolve:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolveBoundary:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensity:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensityBoundary:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostPressure:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostProps:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAcceleration:3
+#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAccelerationBoundary:6
+#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.Advect:3
+#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.MixingVelocityUpdate:3
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.AkinciRigidFluidCoupling:22
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.BodyForce:3
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.LiuFluidForce:22
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.NumberDensity:3
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.PressureRigidBody:8
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMoments:3
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMotion:3
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityBoundary:9
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityRigidBody:3
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.ViscosityRigidBody:8
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.EnergyEquationWithStress:3
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:20
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.IsothermalEOS:8
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:18
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.MieGruneisenEOS:3
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.StiffenedGasEOS:7
+#: ../../pysph/pysph/sph/solid_mech/hvi.py:docstring of pysph.sph.solid_mech.hvi.VonMisesPlasticity2D:3
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiColorGradient:18
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.AdamiReproducingDivergence:13
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.CSFSurfaceTensionForce:15
@@ -1065,39 +1062,42 @@ msgstr ""
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SolidWallPressureBCnoDensity:3
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SummationDensitySourceMass:3
 #: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension.SurfaceForceAdami:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.AdvectionAcceleration:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAII:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeAIIBoundary:6
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDII:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIIBoundary:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeDIJPJ:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoAdvection:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ComputeRhoBoundary:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NormalizedSummationDensity:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.NumberDensity:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForce:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureForceBoundary:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolve:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolveBoundary:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensity:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.SummationDensityBoundary:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostPressure:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.UpdateGhostProps:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAcceleration:3
-#: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.ViscosityAccelerationBoundary:6
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.AkinciRigidFluidCoupling:22
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.BodyForce:3
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.LiuFluidForce:22
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.NumberDensity:3
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.PressureRigidBody:8
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMoments:3
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.RigidBodyMotion:3
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityBoundary:9
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.SummationDensityRigidBody:3
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.ViscosityRigidBody:8
-#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.Advect:3
-#: ../../pysph/pysph/sph/misc/advection.py:docstring of pysph.sph.misc.advection.MixingVelocityUpdate:3
-#: ../../pysph/pysph/sph/bc/inlet_outlet_manager.py:docstring of pysph.sph.bc.inlet_outlet_manager.CopyNormalsandDistances:5
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPHPreStep:10
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.PressureGradientUsingNumberDensity:11
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHPreStep:3
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:63
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHUpdateGhostProps:3
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.EnergyEquation:30
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:58
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.NumberDensity:13
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SpeedOfSound:3
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.StateEquation:12
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:22
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:35
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder3D:3
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:18
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.ContinuityEquationGTVF:11
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:16
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrection:14
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.GradientCorrectionPreStep:3
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.KernelCorrection:11
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedGradientCorrection:9
+#: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:28
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:19
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient:11
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationViscosity:7
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.Predict:13
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuityEquation:13
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.ContinuitySolid:9
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialStress:19
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SetWallVelocity:17
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:28
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeFromMassDensity:5
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.VolumeSummation:11
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.ClearyArtificialViscosity:24
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosity:3
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:12
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.MonaghanSignalViscosityFluids:3
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.InterpolateFunction:3
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.InterpolateSPH:3
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.SPHFirstOrderApproximation:17
@@ -1106,9 +1106,9 @@ msgid "names of the source particle arrays"
 msgstr ""
 
 #: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Equation.converged:1
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient.converged:1
 #: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity.converged:1
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.PressureSolve.converged:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.MomentumEquationPressureGradient.converged:1
 msgid "Return > 0 to indicate converged iterations and < 0 otherwise."
 msgstr ""
 
@@ -1116,29 +1116,29 @@ msgstr ""
 msgid "Basic SPH Equations"
 msgstr ""
 
+#: ../../pysph/pysph/base/kernels.py:docstring of pysph.base.kernels.CubicSpline:20
+#: ../../pysph/pysph/base/kernels.py:docstring of pysph.base.kernels.Gaussian:16
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations:6
+#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEAccelerations:4
+#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensityADKE:2
+#: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator:4
+#: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:43
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic:5
+#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension:6
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPH:9
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquation:31
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:17
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOS:7
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:15
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.UpdateSmoothingLengthFerrari:6
-#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:4
-#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity:5
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf:12
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph:6
 #: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:28
 #: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.ShepardFilter:12
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf:12
 #: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction:8
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph:6
 #: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph:5
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic:5
-#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.ADKEAccelerations:4
-#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensityADKE:2
-#: ../../pysph/pysph/sph/surface_tension.py:docstring of pysph.sph.surface_tension:6
-#: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator:4
-#: ../../pysph/pysph/base/kernels.py:docstring of pysph.base.kernels.CubicSpline:20
-#: ../../pysph/pysph/base/kernels.py:docstring of pysph.base.kernels.Gaussian:16
-#: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:43
+#: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity:5
+#: ../../pysph/pysph/sph/wc/viscosity.py:docstring of pysph.sph.wc.viscosity.LaminarViscosityDeltaSPH:4
 #: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.SPHFirstOrderApproximation:10
 msgid "References"
 msgstr ""
@@ -1218,16 +1218,16 @@ msgid "\\frac{d\\mathbf{v}_{a}}{dt}&=&-\\sum_{b}m_{b}\\Pi_{ab}\\nabla_{a}W_{ab}"
 msgstr ""
 
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.MonaghanArtificialViscosity:7
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:7
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:8
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquation:9
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:9
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:7
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:12
+#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:20
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialViscosity:12
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationPressureGradient:10
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationViscosity:11
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:12
-#: ../../pysph/pysph/sph/wc/density_correction.py:docstring of pysph.sph.wc.density_correction.MLSFirstOrder2D:20
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.HookesDeviatoricStressRate:7
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MomentumEquationWithStress:8
 msgid "where"
 msgstr ""
 
@@ -1285,10 +1285,13 @@ msgstr ""
 msgid ":math:`\\frac{\\partial v^i}{\\partial x^j} = \\sum_{b}\\frac{m_b}{\\rho_b}(v_b - v_a)\\frac{\\partial W_{ab}}{\\partial x_a^j}`"
 msgstr ""
 
+#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.load_output:9
+#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.solve:4
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient2D:9
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.VelocityGradient3D:9
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.XSPHCorrection:13
 #: ../../pysph/pysph/sph/basic_equations.py:docstring of pysph.sph.basic_equations.XSPHCorrectionForLeapFrog:16
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Group:49
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:35
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOS:27
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:28
@@ -1299,7 +1302,6 @@ msgstr ""
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SolidWallPressureBC:45
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.StateEquation:9
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SummationDensity:15
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Group:49
 #: ../docstring of pysph.base.nnps_base.get_centroid:12
 #: ../docstring of pysph.base.particle_array.ParticleArray.add_particles:8
 #: ../docstring of pysph.base.particle_array.ParticleArray.add_property:21
@@ -1310,8 +1312,6 @@ msgstr ""
 #: ../docstring of pysph.base.particle_array.ParticleArray.remove_particles:12
 #: ../docstring of pysph.base.particle_array.ParticleArray.set:7
 #: ../docstring of pysph.base.particle_array.ParticleArray.set_output_arrays:7
-#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.load_output:9
-#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.solve:4
 msgid "Notes"
 msgstr ""
 
@@ -1363,9 +1363,9 @@ msgstr ""
 msgid ":math:`\\frac{d\\rho_a}{dt} = \\sum_b \\rho_a \\frac{m_b}{\\rho_b} \\left( \\boldsymbol{v}_{ab}\\cdot \\nabla_a W_{ab} + \\delta \\eta_{ab} \\cdot \\nabla_{a} W_{ab} (h_{ab}\\frac{c_{ab}}{\\rho_a}(\\rho_b - \\rho_a)) \\right)`"
 msgstr ""
 
+#: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:48
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.ContinuityEquationDeltaSPH:10
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:18
-#: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:48
 msgid "S. Marrone et al., \"delta-SPH model for simulating violent impact flows\", Computer Methods in Applied Mechanics and Engineering, 200 (2011), pp 1526--1542."
 msgstr ""
 
@@ -1445,8 +1445,8 @@ msgid "\\pi_{ij}=\\frac{\\mathbf{u}_{ij}\\cdot\\mathbf{r}_{ij}}\n"
 "{|\\mathbf{r}_{ij}|^{2}}"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:22
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:52
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.MomentumEquationDeltaSPH:22
 msgid "J. M. Cherfils et al., \"JOSEPHINE: A parallel SPH code for free-surface flows\", Computer Physics Communications, 183 (2012), pp 1468--1480."
 msgstr ""
 
@@ -1498,10 +1498,10 @@ msgstr ""
 msgid "maximum speed of sound expected in the system"
 msgstr ""
 
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MonaghanArtificialStress:47
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOS:21
 #: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:24
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.MomentumEquationArtificialViscosity:22
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.MonaghanArtificialStress:47
 msgid "constant"
 msgstr ""
 
@@ -1533,8 +1533,8 @@ msgid "\\rho_{a}=\\begin{cases}\\rho_{a} & \\rho_{a}\\geq\\rho_{0}\\\\\n"
 "\\rho_{0} & \\rho_{a}<\\rho_{0}\\end{cases}`"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:16
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:44
+#: ../../pysph/pysph/sph/wc/basic.py:docstring of pysph.sph.wc.basic.TaitEOSHGCorrection:16
 msgid "J. P. Hughes and D. I. Graham, \"Comparison of incompressible and weakly-compressible SPH models for free-surface water flows\", Journal of Hydraulic Research, 48 (2010), pp. 105-117."
 msgstr ""
 
@@ -1845,9 +1845,9 @@ msgid "\\rho_w=\\rho_0\\left(\\frac{p_w - \\mathcal{X}}{p_0} +\n"
 "1\\right)^{\\frac{1}{\\gamma}}"
 msgstr ""
 
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:45
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.SolidWallPressureBC:33
 #: ../../pysph/pysph/sph/wc/transport_velocity.py:docstring of pysph.sph.wc.transport_velocity.StateEquation:21
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:45
 msgid "reference pressure"
 msgstr ""
 
@@ -1984,15 +1984,15 @@ msgid "\\rho_i = \\frac{\\sum_j m_j W_{ij}}\n"
 ""
 msgstr ""
 
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPH:18
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:20
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:10
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:9
 #: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.CorrectDensity:9
 #: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.DeviatoricStressRate:11
 #: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:13
 #: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:33
 #: ../../pysph/pysph/sph/wc/kernel_correction.py:docstring of pysph.sph.wc.kernel_correction.MixedKernelCorrectionPreStep:11
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPH:18
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHSymmetric:20
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:10
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.SummationDensityCRKSPH:9
 #: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.ComputePressure:8
 msgid "where,"
 msgstr ""
@@ -2040,14 +2040,6 @@ msgstr ""
 msgid "see the class VelocityGradient for :math:`\\nabla \\otimes \\boldsymbol{v}_i`"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.DeviatoricStressRate:25
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:5
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStress:5
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStressSolid:5
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.VelocityGradient:7
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPH:60
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:5
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:5
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme:7
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme:15
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.GSPHScheme:6
@@ -2055,6 +2047,14 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.Scheme:8
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme:5
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:5
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:5
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPH:60
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.DeviatoricStressRate:25
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:5
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStress:5
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationArtificialStressSolid:5
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.VelocityGradient:7
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:5
 msgid "Dimensionality of the problem."
 msgstr ""
 
@@ -2062,9 +2062,6 @@ msgstr ""
 msgid "value of shear modulus"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator:1
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator:33
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator:4
@@ -2072,12 +2069,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator:13
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator:10
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator:14
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator:1
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator:1
 msgid "Pass fluid names and suitable `IntegratorStep` instances."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator:3
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator:3
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator:35
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator:6
@@ -2085,12 +2082,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator:15
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator:12
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator:16
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator:3
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator:3
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator:3
 msgid "For example::"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator:7
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator:7
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator:7
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator:39
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator:7
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator:10
@@ -2098,12 +2095,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator:19
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator:16
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator:20
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator:7
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator:7
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator:7
 msgid "where \"fluid\" and \"solid\" are the names of the particle arrays."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:1
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:1
@@ -2111,12 +2108,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:1
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:1
 msgid "User written function that actually does one timestep."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:3
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:3
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:3
@@ -2124,12 +2121,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:3
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:3
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:3
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:3
 msgid "This function is used in the high-performance Cython implementation. The assumptions one may make are the following:"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:6
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:6
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:6
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:6
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:6
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:6
@@ -2137,12 +2134,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:6
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:6
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:6
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:6
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:6
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:6
 msgid "t and dt are passed."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:8
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:8
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:8
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:8
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:8
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:8
@@ -2150,12 +2147,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:8
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:8
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:8
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:8
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:8
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:8
 msgid "the following methods are available:"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:10
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:10
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:10
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:10
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:10
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:10
@@ -2163,12 +2160,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:10
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:10
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:10
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:10
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:10
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:10
 msgid "self.initialize()"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:12
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:12
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:12
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:12
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:12
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:12
@@ -2176,12 +2173,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:12
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:12
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:12
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:12
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:12
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:12
 msgid "self.stage1(), self.stage2() etc. depending on the number of stages available."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:15
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:15
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:15
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:15
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:15
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:15
@@ -2189,12 +2186,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:15
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:15
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:15
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:15
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:15
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:15
 msgid "self.compute_accelerations(index=0, update_nnps=True)"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:16
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:16
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:16
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:16
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:16
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:16
@@ -2202,12 +2199,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:16
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:16
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:16
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:16
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:16
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:16
 msgid "self.do_post_stage(stage_dt, stage_count_from_1)"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:17
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:17
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:17
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:17
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:17
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:17
@@ -2215,12 +2212,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:17
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:17
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:17
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:17
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:17
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:17
 msgid "self.update_domain()"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:19
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:19
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:19
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator.one_timestep:19
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EulerIntegrator.one_timestep:19
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.Integrator.one_timestep:19
@@ -2228,12 +2225,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PECIntegrator.one_timestep:19
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.PEFRLIntegrator.one_timestep:19
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.TVDRK3Integrator.one_timestep:19
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHIntegrator.one_timestep:19
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFIntegrator.one_timestep:19
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.one_timestep:19
 msgid "Please see any of the concrete implementations of the Integrator class to study.  By default the Integrator implements a predict-evaluate-correct method, the same as PECIntegrator."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:1
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:1
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:1
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme:11
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.GSPHScheme:1
@@ -2241,21 +2238,24 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.Scheme:4
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:1
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:1
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:1
 msgid "List of names of fluid particle arrays."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:3
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme:5
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:3
 msgid "List of names of solid particle arrays."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:7
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:7
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:7
 msgid "Reference density."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:9
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:9
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:9
 msgid "Reference speed of sound."
 msgstr ""
 
@@ -2263,8 +2263,8 @@ msgstr ""
 msgid "Real viscosity of the fluid."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:13
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:13
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme:13
 msgid "Reference smoothing length."
 msgstr ""
 
@@ -2288,10 +2288,6 @@ msgstr ""
 msgid "constant for the equation of state."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:1
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:1
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:1
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.configure_solver:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.configure_solver:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.configure_solver:1
@@ -2301,13 +2297,13 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.configure_solver:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.configure_solver:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.configure_solver:1
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:1
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:1
 msgid "Configure the solver to be generated."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:3
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:3
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:3
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:3
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.configure_solver:7
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.configure_solver:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.configure_solver:3
@@ -2317,13 +2313,13 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.configure_solver:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.configure_solver:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.configure_solver:3
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:3
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:3
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:3
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:3
 msgid "Kernel to use, if none is passed a default one is used."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:5
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:5
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:5
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:5
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.configure_solver:9
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.configure_solver:5
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.configure_solver:5
@@ -2333,13 +2329,13 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.configure_solver:5
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.configure_solver:5
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.configure_solver:5
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:5
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:5
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:5
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:5
 msgid "Integrator class to use, use sensible default if none is passed."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:8
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:8
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:8
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:8
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.configure_solver:12
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.configure_solver:8
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.configure_solver:8
@@ -2349,13 +2345,13 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.configure_solver:8
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.configure_solver:8
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.configure_solver:8
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:8
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:8
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:8
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:8
 msgid "Additional integration stepper instances as a dict."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:10
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:10
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:10
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:10
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.configure_solver:14
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.configure_solver:10
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.configure_solver:10
@@ -2365,12 +2361,13 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.configure_solver:10
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.configure_solver:10
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.configure_solver:10
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme.configure_solver:10
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.configure_solver:10
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.configure_solver:10
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.configure_solver:10
 msgid "Any additional keyword args are passed to the solver instance."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:1
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:1
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:1
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.setup_properties:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.setup_properties:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.setup_properties:1
@@ -2380,12 +2377,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.setup_properties:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.setup_properties:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.setup_properties:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:1
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:1
 msgid "Setup the particle arrays so they have the right set of properties for this scheme."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:4
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:4
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:4
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.setup_properties:4
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.setup_properties:4
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.setup_properties:4
@@ -2395,12 +2392,12 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.setup_properties:4
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.setup_properties:4
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.setup_properties:4
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:4
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:4
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:4
 msgid "List of particle arrays."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:6
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:6
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:6
 #: ../../pysph/pysph/sph/iisph.py:docstring of pysph.sph.iisph.IISPHScheme.setup_properties:6
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme.setup_properties:6
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme.setup_properties:6
@@ -2410,6 +2407,9 @@ msgstr ""
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.SchemeChooser.setup_properties:6
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme.setup_properties:6
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme.setup_properties:6
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme.setup_properties:6
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.GTVFScheme.setup_properties:6
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme.setup_properties:6
 msgid "If True, removes any unnecessary properties."
 msgstr ""
 
@@ -2425,8 +2425,8 @@ msgstr ""
 msgid "See the class MomentumEquationPressureGradient for details."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:1
 #: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.MomentumEquation:1
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:1
 msgid "**Momentum Equation**"
 msgstr ""
 
@@ -2491,10 +2491,10 @@ msgid "p_i^0 = \\min(10|p_i|, p_{ref})\n"
 ""
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:40
-#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationViscosity:5
 #: ../../pysph/pysph/sph/integrator.py:docstring of pysph.sph.integrator.EPECIntegrator:17
 #: ../../pysph/pysph/sph/integrator_step.py:docstring of pysph.sph.integrator_step.VerletSymplecticWCSPHStep:7
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationPressureGradient:40
+#: ../../pysph/pysph/sph/wc/gtvf.py:docstring of pysph.sph.wc.gtvf.MomentumEquationViscosity:5
 msgid "Notes:"
 msgstr ""
 
@@ -2816,13 +2816,13 @@ msgstr ""
 msgid "Tolerence value to decide std or corrected kernel"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme:1
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme:1
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme:1
 msgid "a list with names of fluid particle arrays"
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.ADKEScheme:3
+#: ../../pysph/pysph/sph/wc/crksph.py:docstring of pysph.sph.wc.crksph.CRKSPHScheme:3
 msgid "a list with names of solid (or boundary) particle arrays"
 msgstr ""
 
@@ -3127,22 +3127,22 @@ msgstr ""
 msgid "See \"pysph.sph.wc.viscosity.LaminarViscocity\""
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.initial_acceleration:1
 #: ../../pysph/pysph/sph/integrator.py:docstring of compyle.profile.profile.<locals>.make_wrapper.<locals>.wrapper:1
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.initial_acceleration:1
 msgid "Compute the initial accelerations if needed before the iterations start."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.initial_acceleration:3
 #: ../../pysph/pysph/sph/integrator.py:docstring of compyle.profile.profile.<locals>.make_wrapper.<locals>.wrapper:3
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHIntegrator.initial_acceleration:3
 msgid "The default implementation only does this for the first acceleration evaluator. So if you have multiple evaluators, you must override this method in a subclass."
 msgstr ""
 
-#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:3
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.AdamiHuAdamsScheme:13
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.Scheme:6
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.TVFScheme:3
 #: ../../pysph/pysph/sph/scheme.py:docstring of pysph.sph.scheme.WCSPHScheme:3
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.ElasticSolidsScheme:3
+#: ../../pysph/pysph/sph/wc/pcisph.py:docstring of pysph.sph.wc.pcisph.PCISPHScheme:3
 msgid "List of names of solid particle arrays (or boundaries)."
 msgstr ""
 
@@ -3287,7 +3287,6 @@ msgstr ""
 msgid "Return a particle array for the Standard SPH formulation of solids."
 msgstr ""
 
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:4
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_gasd:3
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_iisph:11
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_rigid_body:6
@@ -3295,10 +3294,10 @@ msgstr ""
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_fluid:3
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_solid:3
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_wcsph:9
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:4
 msgid "Dictionary of constants"
 msgstr ""
 
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:7
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array:13
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_gasd:6
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_iisph:14
@@ -3307,10 +3306,10 @@ msgstr ""
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_fluid:6
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_solid:6
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_wcsph:12
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:7
 msgid "Additional keywords passed are set as the property arrays."
 msgstr ""
 
-#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:10
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_gasd:9
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_iisph:17
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_rigid_body:12
@@ -3318,6 +3317,7 @@ msgstr ""
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_fluid:9
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_tvf_solid:9
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array_wcsph:15
+#: ../../pysph/pysph/sph/solid_mech/basic.py:docstring of pysph.sph.solid_mech.basic.get_particle_array_elastic_dynamics:10
 msgid ":obj:`get_particle_array`"
 msgstr ""
 
@@ -3357,8 +3357,7 @@ msgstr ""
 msgid "density_iterations"
 msgstr ""
 
-#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity:None
-#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity:None
+#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity:-1
 msgid "bint"
 msgstr ""
 
@@ -3378,8 +3377,7 @@ msgstr ""
 msgid "k"
 msgstr ""
 
-#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity:None
-#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity:None
+#: ../../pysph/pysph/sph/gas_dynamics/basic.py:docstring of pysph.sph.gas_dynamics.basic.SummationDensity:-1
 msgid "double"
 msgstr ""
 
@@ -3721,8 +3719,8 @@ msgstr ""
 msgid "Please make sure that this force is applied only once for both the particle properties."
 msgstr ""
 
-#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.EulerStepRigidBody:1
 #: ../../pysph/pysph/sph/integrator_step.py:docstring of pysph.sph.integrator_step.EulerStep:1
+#: ../../pysph/pysph/sph/rigid_body.py:docstring of pysph.sph.rigid_body.EulerStepRigidBody:1
 msgid "Fast but inaccurate integrator. Use this for testing"
 msgstr ""
 
@@ -3817,30 +3815,25 @@ msgid "Simply returns the array for the serial case."
 msgstr ""
 
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:1
-#: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:1
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.serial_reduce_array:1
 msgid "Reduce an array given an array and a suitable reduction operation."
 msgstr ""
 
-#: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:3
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:3
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.serial_reduce_array:3
 msgid "Currently, only 'sum', 'max', 'min' and 'prod' are supported."
 msgstr ""
 
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:5
-#: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:5
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.serial_reduce_array:5
 msgid "**Parameters**"
 msgstr ""
 
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:7
-#: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:7
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.serial_reduce_array:7
 msgid "array: numpy.ndarray: Any numpy array (1D)."
 msgstr ""
 
-#: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:8
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.mpi_reduce_array:8
 #: ../../pysph/pysph/base/reduce_array.py:docstring of pysph.base.reduce_array.serial_reduce_array:8
 msgid "op: str: reduction operation, one of ('sum', 'prod', 'min', 'max')"
@@ -3858,8 +3851,8 @@ msgstr ""
 msgid "This class provides some support for the code generation for the collection of equations."
 msgstr ""
 
-#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Group:6
 #: ../../pysph/pysph/solver/tools.py:docstring of pysph.solver.tools.SimpleRemesher:4
+#: ../../pysph/pysph/sph/equation.py:docstring of pysph.sph.equation.Group:6
 #: ../../pysph/pysph/tools/sph_evaluator.py:docstring of pysph.tools.sph_evaluator.SPHEvaluator:1
 msgid "Constructor."
 msgstr ""
@@ -4486,6 +4479,13 @@ msgstr ""
 msgid "object"
 msgstr ""
 
+#: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS.cell_to_index:0
+#: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS.cells:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.fixed_h:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.heads:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_per_dim:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_tot:0
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.nexts:0
 #: ../docstring of pysph.base.nnps_base.CPUDomainManager.dtype:0
 #: ../docstring of pysph.base.nnps_base.CPUDomainManager.dtype_max:0
 #: ../docstring of pysph.base.nnps_base.CPUDomainManager.ghosts:0
@@ -4548,15 +4548,6 @@ msgstr ""
 #: ../docstring of pysph.base.nnps_base.NNPSParticleArrayWrapper.x:0
 #: ../docstring of pysph.base.nnps_base.NNPSParticleArrayWrapper.y:0
 #: ../docstring of pysph.base.nnps_base.NNPSParticleArrayWrapper.z:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.fixed_h:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.heads:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_per_dim:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_tot:0
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.nexts:0
-#: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS.cell_to_index:0
-#: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS.cells:0
-#: ../docstring of pysph.base.particle_array.ParticleArray:0
-#: ../docstring of pysph.base.particle_array.ParticleArray:0
 #: ../docstring of pysph.base.particle_array.ParticleArray:0
 #: ../docstring of pysph.base.particle_array.ParticleArray.backend:0
 #: ../docstring of pysph.base.particle_array.ParticleArray.constants:0
@@ -4602,6 +4593,8 @@ msgstr ""
 msgid "dtype_max"
 msgstr ""
 
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.heads:1
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.nexts:1
 #: ../docstring of pysph.base.nnps_base.CPUDomainManager.ghosts:1
 #: ../docstring of pysph.base.nnps_base.Cell.gindices:1
 #: ../docstring of pysph.base.nnps_base.Cell.lindices:1
@@ -4610,8 +4603,6 @@ msgstr ""
 #: ../docstring of pysph.base.nnps_base.NNPSBase.cache:1
 #: ../docstring of pysph.base.nnps_base.NNPSBase.pa_wrappers:1
 #: ../docstring of pysph.base.nnps_base.NNPSBase.particles:1
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.heads:1
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.nexts:1
 #: ../docstring of pysph.base.particle_array.ParticleArray.output_property_arrays:1
 #: ../docstring of pysph.base.particle_array.ParticleArray.property_arrays:1
 msgid "list"
@@ -4629,6 +4620,7 @@ msgstr ""
 msgid "This method is responsible for the computation of cell sizes and creation of any ghost particles for periodic or wall boundary conditions."
 msgstr ""
 
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.fixed_h:1
 #: ../docstring of pysph.base.nnps_base.CPUDomainManager.use_double:1
 #: ../docstring of pysph.base.nnps_base.Cell.is_boundary:1
 #: ../docstring of pysph.base.nnps_base.DomainManagerBase.in_parallel:1
@@ -4642,7 +4634,6 @@ msgstr ""
 #: ../docstring of pysph.base.nnps_base.DomainManagerBase.periodic_in_z:1
 #: ../docstring of pysph.base.nnps_base.NNPS.sort_gids:1
 #: ../docstring of pysph.base.nnps_base.NNPSBase.is_periodic:1
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.fixed_h:1
 msgid "'bool'"
 msgstr ""
 
@@ -4760,13 +4751,13 @@ msgstr ""
 msgid "copy_props"
 msgstr ""
 
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_tot:1
 #: ../docstring of pysph.base.nnps_base.DomainManagerBase.dim:1
 #: ../docstring of pysph.base.nnps_base.DomainManagerBase.narrays:1
 #: ../docstring of pysph.base.nnps_base.NNPSBase.dim:1
 #: ../docstring of pysph.base.nnps_base.NNPSBase.n_cells:1
 #: ../docstring of pysph.base.nnps_base.NNPSBase.narrays:1
 #: ../docstring of pysph.base.nnps_base.NNPSParticleArrayWrapper.np:1
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_tot:1
 msgid "'int'"
 msgstr ""
 
@@ -4882,8 +4873,8 @@ msgstr ""
 msgid "Nearest neighbor query class using the box-sort algorithm."
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPS:3
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:4
+#: ../docstring of pysph.base.nnps_base.NNPS:3
 msgid "NNPS bins all local particles using the box sort algorithm in Cells. The cells are stored in a dictionary 'cells' which is keyed on the spatial index (IntPoint) of the cell."
 msgstr ""
 
@@ -4924,10 +4915,10 @@ msgstr ""
 msgid "cyarray.carray.DoubleArray"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase:1
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:4
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:7
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:9
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:4
+#: ../docstring of pysph.base.nnps_base.NNPSBase:1
 msgid "Constructor for NNPS"
 msgstr ""
 
@@ -4935,36 +4926,36 @@ msgstr ""
 msgid "Dimension (fixme: Not sure if this is really needed)"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase:5
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:13
+#: ../docstring of pysph.base.nnps_base.NNPSBase:5
 msgid "The list of particle arrays we are working on."
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase:7
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:10
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:13
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:15
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:10
+#: ../docstring of pysph.base.nnps_base.NNPSBase:7
 msgid "Optional kernel radius scale. Defaults to 2"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase:9
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:14
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:17
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:17
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:14
+#: ../docstring of pysph.base.nnps_base.NNPSBase:9
 msgid "Optional limits for the domain"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase:11
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:18
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:21
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:19
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:18
+#: ../docstring of pysph.base.nnps_base.NNPSBase:11
 msgid "Flag to set if we want to cache neighbor calls. This costs storage but speeds up neighbor calculations."
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase:14
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:21
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:24
 #: ../docstring of pysph.base.box_sort_nnps.DictBoxSortNNPS:22
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:21
+#: ../docstring of pysph.base.nnps_base.NNPSBase:14
 msgid "Flag to sort neighbors using gids (if they are available). This is useful when comparing parallel results with those from a serial run."
 msgstr ""
 
@@ -5012,8 +5003,8 @@ msgstr ""
 msgid "particles"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSBase.set_context:1
 #: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.set_context:1
+#: ../docstring of pysph.base.nnps_base.NNPSBase.set_context:1
 msgid "Setup the context before asking for neighbors.  The `dst_index` represents the particles for whom the neighbors are to be determined from the particle array with index `src_index`."
 msgstr ""
 
@@ -5052,8 +5043,8 @@ msgstr ""
 msgid "pa"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.NNPSParticleArrayWrapper.tag:1
 #: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS.ncells_per_dim:1
+#: ../docstring of pysph.base.nnps_base.NNPSParticleArrayWrapper.tag:1
 msgid "cyarray.carray.IntArray"
 msgstr ""
 
@@ -5089,12 +5080,12 @@ msgstr ""
 msgid "Spatial index for a cell"
 msgstr ""
 
-#: ../docstring of pysph.base.nnps_base.get_centroid:0
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particles_info:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:0
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:0
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:0
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:0
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:0
+#: ../docstring of pysph.base.nnps_base.get_centroid:0
 msgid "Returns"
 msgstr ""
 
@@ -5102,10 +5093,10 @@ msgstr ""
 msgid "**centroid**"
 msgstr ""
 
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.create_fluid_around_packing:0
+#: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.Interpolator.interpolate:0
 #: ../docstring of pysph.base.nnps_base.get_centroid:0
 #: ../docstring of pysph.base.particle_array.ParticleArray.get:0
-#: ../../pysph/pysph/tools/interpolator.py:docstring of pysph.tools.interpolator.Interpolator.interpolate:0
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.create_fluid_around_packing:0
 msgid "Return type"
 msgstr ""
 
@@ -5126,23 +5117,23 @@ msgstr ""
 msgid "Nearest neighbor query class using the linked list method."
 msgstr ""
 
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:6
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:9
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:6
 msgid "Number of dimension."
 msgstr ""
 
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:8
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:11
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:8
 msgid "The list of particle arrays we are working on"
 msgstr ""
 
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:12
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:15
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:12
 msgid "Optional number of layers to share in parallel"
 msgstr ""
 
-#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:16
 #: ../docstring of pysph.base.box_sort_nnps.BoxSortNNPS:19
+#: ../docstring of pysph.base.linked_list_nnps.LinkedListNNPS:16
 msgid "Optional flag to use constant cell sizes throughout."
 msgstr ""
 
@@ -5287,10 +5278,10 @@ msgstr ""
 msgid "dictionary of {const_name: carray}"
 msgstr ""
 
-#: ../docstring of pysph.base.particle_array.ParticleArray:22
-#: ../docstring of pysph.base.particle_array.ParticleArray.copy_over_properties:7
 #: ../../pysph/pysph/base/utils.py:docstring of pysph.base.utils.get_particle_array:17
 #: ../../pysph/pysph/solver/output.py:docstring of pysph.solver.output.load:7
+#: ../docstring of pysph.base.particle_array.ParticleArray:22
+#: ../docstring of pysph.base.particle_array.ParticleArray.copy_over_properties:7
 msgid "Examples"
 msgstr ""
 
@@ -5558,7 +5549,7 @@ msgstr ""
 msgid "args"
 msgstr ""
 
-#: ../docstring of pysph.base.particle_array.ParticleArray.get:None
+#: ../docstring of pysph.base.particle_array.ParticleArray.get:-1
 msgid "additional args"
 msgstr ""
 
@@ -6152,7 +6143,7 @@ msgstr ""
 msgid "`arrays`"
 msgstr ""
 
-#: ../../pysph/pysph/solver/solver.py:docstring of compyle.profile.profile.<locals>.make_wrapper.<locals>.wrapper:None
+#: ../../pysph/pysph/solver/solver.py:docstring of compyle.profile.profile.<locals>.make_wrapper.<locals>.wrapper:-1
 msgid "A dictionary keyed on particle array names and with"
 msgstr ""
 
@@ -6268,7 +6259,7 @@ msgstr ""
 msgid "collected"
 msgstr ""
 
-#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.set_parallel_output_mode:None
+#: ../../pysph/pysph/solver/solver.py:docstring of pysph.solver.solver.Solver.set_parallel_output_mode:-1
 msgid "Collect array data from all processors on root and"
 msgstr ""
 
@@ -7033,15 +7024,15 @@ msgstr ""
 msgid "Creates a periodic packed 2D or 3D domain. It creates particles which are not aligned but packed such that the number density is uniform."
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:8
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:8
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:8
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:8
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:8
 msgid "required particle spacing"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:10
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.create_fluid_around_packing:10
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:10
 msgid "length of the domain"
 msgstr ""
 
@@ -7053,87 +7044,87 @@ msgstr ""
 msgid "Height of the domain"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:18
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:22
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:20
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:20
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:18
 msgid "projection frequency of particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:20
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:14
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:12
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:12
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:20
 msgid "background pressure (default: 1.0)"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:22
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:16
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:14
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:14
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:22
 msgid "viscosity coefficient (default: 0.3/dx)"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:24
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:18
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:16
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:16
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:24
 msgid "coefficient of repulsion (default: 0.005*dx)"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:26
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:34
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:32
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:32
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:26
 msgid "tolerance value for convergence (default: 1e-2)"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:29
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:37
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:35
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:35
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:29
 msgid "* **xs** (*float*) -- x coordinate of solid particles * **ys** (*float*) -- y coordinate of solid particles * **zs** (*float*) -- z coordinate of solid particles * **xf** (*float*) -- x coordinate of fluid particles * **yf** (*float*) -- y coordinate of fluid particles * **zf** (*float*) -- z coordinate of fluid particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:29
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:37
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:35
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:35
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:29
 msgid "**xs** (*float*) -- x coordinate of solid particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:30
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:38
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:36
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:36
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:30
 msgid "**ys** (*float*) -- y coordinate of solid particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:31
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:39
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:37
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:37
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:31
 msgid "**zs** (*float*) -- z coordinate of solid particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:32
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:40
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:38
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:38
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:32
 msgid "**xf** (*float*) -- x coordinate of fluid particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:33
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:41
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:39
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:39
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:33
 msgid "**yf** (*float*) -- y coordinate of fluid particles"
 msgstr ""
 
-#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:34
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_coordinates:42
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_2d_particles_from_surface_file:40
 #: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_3d_particles_from_surface_file:40
+#: ../../pysph/pysph/tools/geometry.py:docstring of pysph.tools.geometry.get_packed_periodic_packed_particles:34
 msgid "**zf** (*float*) -- z coordinate of fluid particles"
 msgstr ""
 
