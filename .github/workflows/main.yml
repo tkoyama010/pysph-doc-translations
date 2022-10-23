@@ -42,6 +42,7 @@ jobs:
         pip install -U pip setuptools wheel
         pip install -r ./pysph/requirements.txt
         pip install -r ./requirements.txt
+        curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
         deactivate
     - name: update
       env:
